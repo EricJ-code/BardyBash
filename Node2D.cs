@@ -7,6 +7,7 @@ public partial class Node2D : Godot.Node2D
 	public override void _Ready()
 	{
 		///dad2
+		//charles
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
