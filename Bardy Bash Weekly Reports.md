@@ -18,15 +18,15 @@ GitHub Issues Tutorials
 - [Closing an issue](https://scribehow.com/shared/Close_a_Test_Issue_on_GitHub_Repository__fgRZQiCCRNyLYsnRi2NnkQ)
 
 Esmeralda Animation Drafts:
-- **Idle:**
+- **Idle:**__
   
 ![Esmeralda-Wiggle.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Wiggle.gif)
 
-- **Ability Ready:**
+- **Ability Ready:**__
   
 ![Esmeralda-Ability-Ready.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Ability-Ready.gif)
 
-- **Ability Use:**
+- **Ability Use:**__
   
 ![Esmeralda-Ability-Use.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Ability-Use.gif)
 
