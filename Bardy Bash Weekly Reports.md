@@ -19,11 +19,11 @@ GitHub Issues Tutorials
 
 Esmeralda Animation Drafts:
 - **Idle**:
-![[Esmeralda-Wiggle.gif]]
+![Esmeralda-Wiggle.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Wiggle.gif)
 - **Ability Ready**
-![[Esmeralda-Ability-Ready.gif]]
+![Esmeralda-Ability-Ready.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Ability-Ready.gif)
 - **Ability Use**
-![[Esmeralda-Ability-Use.gif]]
+![Esmeralda-Ability-Use.gif](https://github.com/EricJ-code/BardyBash/blob/master/Assets/Esmeralda/Esmeralda-Ability-Use.gif)
 ### Sumira:
 
 ### Tyler:
