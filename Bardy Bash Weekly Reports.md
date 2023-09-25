@@ -9,7 +9,7 @@ The week of set up. With the recent controversy surrounding Unity we have decide
 ### Charles:
 
 ### Eric:
-[Bard 1 Sketch 1](https://drive.google.com/drive/folders/1tQsRbeR7yG6Xl4G4BrrJ6xlLuG4eQEjE?usp=drive_link)__
+[Bard 1 Sketch 1](https://drive.google.com/drive/folders/1tQsRbeR7yG6Xl4G4BrrJ6xlLuG4eQEjE?usp=drive_link)\
 [GitHub Projects](https://github.com/EricJ-code/BardyBash/projects?query=is%3Aopen)
 
 GitHub Issues Tutorials
