@@ -48,3 +48,6 @@ Organized Meeting Setups going forward, Researched alternative methods to making
 Began implementation of basic stage 1
 ### Sumira: Gameplay discussion
 ### Tyler: Gameplay discussion 
+
+## Talking to Nate:
+Following on the humblebumble package.
