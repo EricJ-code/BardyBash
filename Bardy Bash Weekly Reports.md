@@ -63,8 +63,10 @@ Restructured UI/UX design for levels, Drafted Music Sketches
 Organized Meeting Setups going forward, Researched alternative methods to making a Rhythm Game in Godot, Restructured UI/UX design for levels, Drafting Music Sketches 
 ### Kevin: 
 Began implementation of basic stage 1
-### Sumira: Gameplay discussion
-### Tyler: Gameplay discussion 
+### Sumira: 
+Gameplay discussion
+### Tyler: 
+Gameplay discussion 
 
 ## Talking to Nate:
 Following on the humblebumble package.
