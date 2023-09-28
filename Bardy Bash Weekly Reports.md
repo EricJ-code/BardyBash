@@ -1,6 +1,6 @@
 # Weekly Meetings
 Monday:
-- Gameplay Team Meeting 7:30pm - 8pm
+- Gameplay Team Meeting 7:30pm - 8pm <br\>
   
 Tuesday: 
 - SCRUM (Stand-up) 6:00pm
