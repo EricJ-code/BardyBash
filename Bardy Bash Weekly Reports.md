@@ -15,7 +15,7 @@
 **Sunday**
 - SCRUM (Stand-up) 10:00am
   
-# Week 1: 09-17-23
+# Week 1: 09-20-23
 ## Overall Progress:
 The week of set up. With the recent controversy surrounding Unity we have decided to switch to Godot. The focus this week was to get everyone set up on the GitHub Repo. Tyler was a huge help in setting up everyone’s local machines to be able to interact with the repo. Charles made a song sketch and Cat started work on the UI/UX design. Tyler, Kevin, and Sumira have been researching Godot and how to create a rhythm game making this game engine. Overall, I am very proud of this team for being able to switch from one platform to another so seamlessly, of course not having much done in Unity did help with the transition.
 -Eric Estadt 
@@ -51,7 +51,7 @@ Esmeralda Animation Drafts:
 
 ### Tyler:
 
-# Week 2: 09-24-23
+# Week 2: 09-27-23
 ## Overall Progress: 
 Getting Started. With last week’s major change, the main goal of the past week has been providing a good foundation for the project. Project Management worked on creating a SCRUM-like format for everyone to follow and encouraged setting up smaller meetings for each team including pair-programming to minimize potential miscommunications in the future. The Gameplay team, in addition to starting on the first scene, has been working on better understanding Godot and evaluating strategies to better utilize the tools provided for this platform. The UI/UX team has re-evaluated the current planned layout for the game, and have drafted a more cohesive layout. 
 ## Team Member Contributions:
