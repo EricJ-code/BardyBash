@@ -34,3 +34,17 @@ Esmeralda Animation Drafts:
 
 ### Tyler:
 
+# Week 2: 09-24-23
+## Overall Progress: 
+Getting Started. With last week’s major change, the main goal of the past week has been providing a good foundation for the project. Project Management worked on creating a SCRUM-like format for everyone to follow and encouraged setting up smaller meetings for each team including pair-programming to minimize potential miscommunications in the future. The Gameplay team, in addition to starting on the first scene, has been working on better understanding Godot and evaluating strategies to better utilize the tools provided for this platform. The UI/UX team has re-evaluated the current planned layout for the game, and have drafted a more cohesive layout. 
+## Team Member Contributions:
+### Cat: 
+Organized Meeting Setups going forward, Drafting UI/UX designs, 
+### Charles: 
+Restructured UI/UX design for levels, Drafted Music Sketches
+### Eric: 
+Organized Meeting Setups going forward, Researched alternative methods to making a Rhythm Game in Godot, Restructured UI/UX design for levels, Drafting Music Sketches 
+### Kevin: 
+Began implementation of basic stage 1
+### Sumira: Gameplay discussion
+### Tyler: Gameplay discussion 
