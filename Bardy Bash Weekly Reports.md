@@ -1,15 +1,15 @@
 # Weekly Meetings
-Monday: 
-Gameplay Team Meeting 7:30pm - 8pm
+Monday:
+- Gameplay Team Meeting 7:30pm - 8pm
 Tuesday: 
-SCRUM (Stand-up) 6:00pm
+- SCRUM (Stand-up) 6:00pm
 Thursday: 
-Mus Prod 7:00pm-7:30pm
-Art  7:30pm - 8pm
+- Mus Prod 7:00pm-7:30pm
+- Art  7:30pm - 8pm
 Friday
-SCRUM (Sprint) during class
+- SCRUM (Sprint) during class
 Sunday
-SCRUM (Stand-up) 10:00am
+- SCRUM (Stand-up) 10:00am
 # Week 1: 09-17-23
 ## Overall Progress:
 The week of set up. With the recent controversy surrounding Unity we have decided to switch to Godot. The focus this week was to get everyone set up on the GitHub Repo. Tyler was a huge help in setting up everyone’s local machines to be able to interact with the repo. Charles made a song sketch and Cat started work on the UI/UX design. Tyler, Kevin, and Sumira have been researching Godot and how to create a rhythm game making this game engine. Overall, I am very proud of this team for being able to switch from one platform to another so seamlessly, of course not having much done in Unity did help with the transition.
