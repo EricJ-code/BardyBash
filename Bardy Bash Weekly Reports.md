@@ -1,18 +1,18 @@
 # Weekly Meetings
-Monday:
+**Monday:**
 - Gameplay Team Meeting 7:30pm - 8pm
   
-Tuesday: 
+**Tuesday:** 
 - SCRUM (Stand-up) 6:00pm
   
-Thursday: 
+**Thursday:** 
 - Mus Prod 7:00pm-7:30pm
 - Art  7:30pm - 8pm
   
-Friday
+**Friday**
 - SCRUM (Sprint) during class
   
-Sunday
+**Sunday**
 - SCRUM (Stand-up) 10:00am
   
 # Week 1: 09-17-23
