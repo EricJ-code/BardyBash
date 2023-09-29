@@ -1,5 +1,59 @@
-[gd_scene format=3 uid="uid://ucs5xenvq0lw"]
+[gd_scene load_steps=4 format=3 uid="uid://c1n02cafww386"]
 
-[node name="MarginContainer" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_uir4m"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_klh0d"]
+script/source = "using Godot;
+using System;
+
+public partial class MarginContainer : Godot.MarginContainer
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="CSharpScript" id="CSharpScript_fud6p"]
+script/source = "using Godot;
+using System;
+
+public partial class ColorRect : Godot.ColorRect
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uir4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1164.0
+offset_bottom = 650.0
+script = SubResource("CSharpScript_klh0d")
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.211765, 0.0235294, 0.027451, 1)
+script = SubResource("CSharpScript_fud6p")
