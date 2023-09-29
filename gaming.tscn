@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2tu1uhxu762o"]
 
-[ext_resource type="Script" path="res://Node2D.cs" id="1_1qu7n"]
+[ext_resource type="Script" path="res://Scripts/textNoteTranslation.cs" id="1_kw8q3"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1qu7n")
+script = ExtResource("1_kw8q3")

@@ -1,11 +1,25 @@
 using Godot;
 using System;
+using Melanchall.DryWetMidi.Multimedia;
+using Melanchall.DryWetMidi.Core;
+using Melanchall.DryWetMidi.Interaction;
 
-public partial class Node2D : Godot.Node2D
+
+
+public partial class textNoteTranslation : Godot.Node2D
 {
+
+	MidiFile midiFile;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		midiFile = MidiFile.Read("Music/DummySong.mid");
+
+		foreach (var x in midiFile.GetNotes().GetChords()) {
+			GD.Print(x);
+		}
+
 		///dad2
 		//charles
 		// Lilisi
