@@ -14,12 +14,29 @@ public partial class textNoteTranslation : Godot.Node2D
 {
 
 	MidiFile midiFile;
-
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		midiFile = MidiFile.Read("Music/DummySong.mid");
-
+		/*
+		Eric Estadt
+		10.2.2023
+		In reference to below also commented
+		Goal:
+			Trying to play music along side with the print "Note On"
+			Inorder to see if we can use to spawn note.
+			Will do more research soon.
+			May need to use async inorder to play but not interrupt gameplay.
+		*/
+		/*
+		using (var outputDevice = OutputDevice.GetByName("Microsoft GS Wavetable Synth"))
+		{
+			midiFile.Play(outputDevice);
+			var playback = midiFile.GetPlayback(outputDevice);
+			playback.Start();
+		}
+		*/
 		List<string> noteEvents = new List<string>();
 		
 		foreach (var x in midiFile.GetTrackChunks()) {
@@ -35,22 +52,45 @@ public partial class textNoteTranslation : Godot.Node2D
 				outputFile.WriteLine(line);
 			outputFile.Close();
 		}
-
+		/*
+		Eric Estadt
+		10.2.2023
+		Comment in reference to below also commented
+		Quick proof of of concept code.
+		Will print out the note events and wait times accordingly.
+		May need more work. Must calc proper wait times to compare.
+		Still needs some work may need to implement async waits.
+		*/
 		var timing = 0;
 		var timing2 = 0;
-
-		using (StreamReader beatMapReader = new StreamReader(Path.Combine("Music/BeatMaps","WriteLines.txt"))){
-			for (int i = 0; i < noteEvents.Count; i++)
+		for (int i = 2; i < noteEvents.Count -1 ; i++)
 			{
 				if(noteEvents[i].Contains("On")){
 					GD.Print("Note On");
-					timing = noteEvents[i].Split(' ',':')[2].ToInt();
-					timing2 = noteEvents[i-1].Split(' ',':')[2].ToInt();
+					timing = noteEvents[i-2].Split(' ',':')[2].ToInt();
+					timing2 = noteEvents[i].Split(' ',':')[2].ToInt();
 					int sleepTime = timing2 - timing;
+					GD.Print("WAIT: "+ sleepTime);
 					//Thread.Sleep(sleepTime);
 				}
+				else if( noteEvents[i].Contains("Off"))
+					GD.Print("Note Off");
 			}
-			/*
+		/*
+		Eric Estadt
+		10.2.2023
+		Comment in reference to below also commented
+		We may eventually need to just read the beatmaps as opposed to
+		writing them thus the reader.
+		the for loop that follows is a debug tool to track Notes On and Notes Off
+		*/
+		/*
+		using (StreamReader beatMapReader = new StreamReader(Path.Combine("Music/BeatMaps","WriteLines.txt"))){
+
+
+			beatMapReader.Close();
+		}
+					
 			foreach(string line in noteEvents)
 				if( line.Contains("On")){
 					GD.Print("Note On");
@@ -60,9 +100,8 @@ public partial class textNoteTranslation : Godot.Node2D
 				}
 				else if( line.Contains("Off"))
 					GD.Print("Note Off");
-		*/
-		}
 		
+		*/
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
