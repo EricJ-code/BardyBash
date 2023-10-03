@@ -6,6 +6,7 @@ using Melanchall.DryWetMidi.Interaction;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 
 
@@ -20,6 +21,7 @@ public partial class textNoteTranslation : Godot.Node2D
 		midiFile = MidiFile.Read("Music/DummySong.mid");
 
 		List<string> noteEvents = new List<string>();
+		
 		foreach (var x in midiFile.GetTrackChunks()) {
 			GD.Print(x);
 			foreach (var y in x.GetTimedEvents()){
@@ -35,17 +37,32 @@ public partial class textNoteTranslation : Godot.Node2D
 		}
 
 		var timing = 0;
-		
+		var timing2 = 0;
+
 		using (StreamReader beatMapReader = new StreamReader(Path.Combine("Music/BeatMaps","WriteLines.txt"))){
+			for (int i = 0; i < noteEvents.Count; i++)
+			{
+				if(noteEvents[i].Contains("On")){
+					GD.Print("Note On");
+					timing = noteEvents[i].Split(' ',':')[2].ToInt();
+					timing2 = noteEvents[i-1].Split(' ',':')[2].ToInt();
+					int sleepTime = timing2 - timing;
+					//Thread.Sleep(sleepTime);
+				}
+			}
+			/*
 			foreach(string line in noteEvents)
 				if( line.Contains("On")){
 					GD.Print("Note On");
-					
+					var split = line.Split(' ',':');
+					timing = split[2].ToInt();
+					Thread.Sleep(timing);
 				}
 				else if( line.Contains("Off"))
 					GD.Print("Note Off");
+		*/
 		}
-
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

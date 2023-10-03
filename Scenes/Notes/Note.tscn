@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg1kecjes0a7x"]
 
-[ext_resource type="Texture2D" uid="uid://2mtqb8xbgw0y" path="res://Red 1.png" id="1_jt6hy"]
+[ext_resource type="Texture2D" uid="uid://2mtqb8xbgw0y" path="res://Assets/Test Images/Red 1.png" id="1_jt6hy"]
 [ext_resource type="Script" path="res://Scenes/Notes/Note.cs" id="1_wg1vr"]
 
 [node name="Node2D" type="Node2D"]
