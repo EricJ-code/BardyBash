@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://dds0tv0olmfix"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_1el88"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1el88")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(0.196078, 0, 0.317647, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_constants/margin_top = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 83
+text = "Bardy
+Bash"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 500
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Play"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+action_mode = 0
+text = "Options"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
