@@ -70,3 +70,20 @@ Gameplay discussion
 
 ## Talking to Nate:
 Following on the humblebumble package.
+
+# Week 2: 10-04-23
+## Overall Progress: 
+**Overcoming hurdles.** The major issue of this project has been figuring out how to get Godot to read MIDI files so that notes could be spawned from them. The gameplay team was hard at work and discovered a C# package called “DryWetMidi” and have made great progress in producing basic outputs that can later be adjusted to spawn notes. Additionally, a rough scene for the first level has been made to work on the more visual aspect of note creation and falling. The UI Team has created a skeleton Main Menu with basic play & quit functionality. The Music Team has also produced additional sketches for the first level.
+## Team Member Contributions:
+### Cat: 
+Creating Basic Main Menu.
+### Charles: 
+Creating Basic Main Menu, Sketching Music.
+### Eric: 
+Configuring DryWetMidi for Music Note Production, Midi to text translation Sketching Music.
+### Kevin: 
+Creating Basic Scene 1.
+### Sumira: 
+Creating Basic Scene 1.
+### Tyler: 
+Configuring DryWetMidi for Music Note Production,
