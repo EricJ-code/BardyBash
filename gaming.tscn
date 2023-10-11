@@ -1,3 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2tu1uhxu762o"]
+[gd_scene load_steps=4 format=3 uid="uid://tatfpp6krpeq"]
 
+[ext_resource type="Script" path="res://gaming.gd" id="1_mwr5q"]
+[ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://collector.tscn" id="2_rgbg6"]
+[ext_resource type="Script" path="res://Spawner.cs" id="3_ec7i4"]
 
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mwr5q")
+
+[node name="Collector" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(308, 594)
+scale = Vector2(0.15, 0.15)
+
+[node name="Spawner" type="Node2D" parent="Collector"]
+position = Vector2(1226.67, -4300)
+scale = Vector2(6.66667, 6.66667)
+script = ExtResource("3_ec7i4")
