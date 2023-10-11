@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://tndkdjxnxjm"]
+[gd_scene load_steps=2 format=3 uid="uid://dds0tv0olmfix"]
 
 [sub_resource type="GDScript" id="GDScript_drc8i"]
 script/source = "extends Control
@@ -9,8 +9,13 @@ script/source = "extends Control
 
 #The Keyboard and switching scenes functinality is running! I still need to 
 # look into the overlay option.
+
+
+
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play.grab_focus()
+	$PopupMenu.hide()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +28,13 @@ func _on_play_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file(\"res://Options_Scene.tscn\")
+	$PopupMenu.show()
+	
+	
+	
+	#PopupMenu.popup_show()
+	#get_tree().change_scene_to_file(\"res://Options_Scene.tscn\")
+	
 
 
 
@@ -57,7 +68,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 30
-metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -96,6 +106,7 @@ theme_override_constants/margin_right = 500
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 action_mode = 0
+keep_pressed_outside = true
 text = "Options"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
@@ -107,6 +118,23 @@ theme_override_constants/margin_right = 500
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 text = "Quit"
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+initial_position = 1
+size = Vector2i(500, 500)
+visible = true
+
+[node name="ColorRect" type="ColorRect" parent="PopupMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.631373, 0.988235, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupMenu"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]
