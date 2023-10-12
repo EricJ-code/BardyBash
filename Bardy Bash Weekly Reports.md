@@ -87,3 +87,21 @@ Creating Basic Scene 1.
 Creating Basic Scene 1.
 ### Tyler: 
 Configuring DryWetMidi for Music Note Production,
+
+# Week 4: 10-8-23
+## Overall Progress:
+Slow, but Steady.  The Focus of this week has been setting up minimum functionality for the first stage or level of the game. Once we are able to reach this milestone, we will be able to have a minimally functioning level. The Gameplay Team has been focused on creating Spawners for Music Notes, as well as objects for these notes to collide with. It is worth noting that the current spawners are not actually spawning notes for the music, but are instead being used to prepare the basic functions of gameplay for actual note production. Meanwhile, the UI team has begun work on displaying an options menu. 
+## Team Member Contributions:
+### Cat:
+Progress on Options Menu
+### Charles:
+Progress on Options Menu, Music Sketching
+### Eric:
+Music Sketching, Revising Note Production
+### Kevin:
+Creating Spawners & collision objects
+### Sumira:
+Creating Spawners & collision objects 
+### Tyler:
+Revising Note Production 
+
