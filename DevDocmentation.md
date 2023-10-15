@@ -98,15 +98,15 @@ git push origin [New Branch Name]
 ```
 ### Via VSC:
 Step 1: Click the source control symbol found on the left vertical nav bar.
-Step 2: Click the three dots found the the right of the repo name.
-Step 3: Click Pull
-**If you want to stage all changes**
-Step 4: Write commit message
-Step 5: Click Commit
-Step 6: Click Push
-Step 7: On the pop-up asking if you would like to stage your changes hit yes
-**If you want to stage select changes**
-Step 4: Select the files you want to stage by clicking the '+'
-Step 5: Write commit message
-Step 6: Click Commit
-Step 7: Click Push
+<br>Step 2: Click the three dots found the the right of the repo name.
+<br>Step 3: Click Pull
+<br>**If you want to stage all changes**
+<br>Step 4: Write commit message
+<br>Step 5: Click Commit
+<br>Step 6: Click Push
+<br>Step 7: On the pop-up asking if you would like to stage your changes hit yes
+<br>**If you want to stage select changes**
+<br>Step 4: Select the files you want to stage by clicking the '+'
+<br>Step 5: Write commit message
+<br>Step 6: Click Commit
+<br>Step 7: Click Push
