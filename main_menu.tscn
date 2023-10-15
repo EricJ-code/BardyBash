@@ -29,6 +29,7 @@ func _on_play_pressed():
 
 func _on_options_pressed():
 	$PopupMenu.show()
+	$PopupMenu.set_focused_item()
 	
 	
 	
@@ -53,7 +54,7 @@ script = SubResource("GDScript_drc8i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -123,6 +124,8 @@ text = "Quit"
 initial_position = 1
 size = Vector2i(500, 500)
 visible = true
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
 
 [node name="ColorRect" type="ColorRect" parent="PopupMenu"]
 anchors_preset = 15
@@ -133,8 +136,20 @@ grow_vertical = 2
 color = Color(1, 0.631373, 0.988235, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="PopupMenu/MarginContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]
