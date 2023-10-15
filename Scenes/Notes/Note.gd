@@ -8,7 +8,7 @@ func _ready():
 	print(speed_x)
 
 	speed_x = get_parent().get_position().x/seconds
-	speed_y = get_parent().get_position().y /seconds
+	speed_y = get_parent().get_position().y/seconds
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

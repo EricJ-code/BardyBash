@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://tatfpp6krpeq"]
+
+[ext_resource type="Script" path="res://Scripts/gaming.gd" id="1_mwr5q"]
+[ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://tscns/collector.tscn" id="2_rgbg6"]
+[ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_ec7i4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mwr5q")
+
+[node name="Collector" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(216, 416)
+scale = Vector2(0.15, 0.15)
+
+[node name="Spawner" type="Node2D" parent="Collector"]
+position = Vector2(2400, -2240)
+scale = Vector2(6.66667, 6.66667)
+script = ExtResource("3_ec7i4")
+
+[node name="Collector2" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(448, 480)
+scale = Vector2(0.15, 0.15)
+
+[node name="Spawner" type="Node2D" parent="Collector2"]
+position = Vector2(906.667, -2666.67)
+scale = Vector2(6.66667, 6.66667)
+script = ExtResource("3_ec7i4")
+
+[node name="Collector3" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(704, 480)
+scale = Vector2(0.15, 0.15)
+
+[node name="Spawner" type="Node2D" parent="Collector3"]
+position = Vector2(-853.333, -2613.33)
+scale = Vector2(6.66667, 6.66667)
+script = ExtResource("3_ec7i4")
+
+[node name="Collector4" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(928, 416)
+scale = Vector2(0.15, 0.15)
+
+[node name="Spawner" type="Node2D" parent="Collector4"]
+position = Vector2(-2346.67, -2186.67)
+scale = Vector2(6.66667, 6.66667)
+script = ExtResource("3_ec7i4")
