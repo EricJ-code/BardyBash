@@ -16,5 +16,7 @@ func _process(delta):
 
 func spawnNote(collector):
 	get_node(collector).spawnNote()
+	
+
 
 

@@ -7,6 +7,13 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tj1x3")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 80.0
+offset_right = 144.0
+offset_bottom = 103.0
+scale = Vector2(4.4814, 2.73108)
+
 [node name="Collector1" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(224, 480)
 
