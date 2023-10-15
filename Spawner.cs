@@ -23,7 +23,7 @@ public partial class Spawner : Node2D
 	public override void _Ready()
 	{
 		note = ResourceLoader.Load<PackedScene>(playerPath ).Instantiate();
-		spawn();
+		//spawn();
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 

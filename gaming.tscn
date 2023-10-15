@@ -7,11 +7,10 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mwr5q")
 
-[node name="Collector" parent="." instance=ExtResource("2_rgbg6")]
+[node name="Collector1" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(308, 594)
-scale = Vector2(0.15, 0.15)
+action = ""
 
-[node name="Spawner" type="Node2D" parent="Collector"]
-position = Vector2(1226.67, -4300)
-scale = Vector2(6.66667, 6.66667)
+[node name="Spawner" type="Node2D" parent="Collector1"]
+position = Vector2(310, -668)
 script = ExtResource("3_ec7i4")
