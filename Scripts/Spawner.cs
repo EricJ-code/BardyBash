@@ -5,7 +5,7 @@ public partial class Spawner : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export]
-	private string playerPath = "res://Scenes/Notes/Note.tscn"; // Path to your scene
+	private string playerPath = "res://Tscns/Note.tscn"; // Path to your scene
 
 	//public override void _Ready()
 	
