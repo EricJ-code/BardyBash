@@ -70,3 +70,38 @@ Gameplay discussion
 
 ## Talking to Nate:
 Following on the humblebumble package.
+
+# Week 2: 10-04-23
+## Overall Progress: 
+**Overcoming hurdles.** The major issue of this project has been figuring out how to get Godot to read MIDI files so that notes could be spawned from them. The gameplay team was hard at work and discovered a C# package called “DryWetMidi” and have made great progress in producing basic outputs that can later be adjusted to spawn notes. Additionally, a rough scene for the first level has been made to work on the more visual aspect of note creation and falling. The UI Team has created a skeleton Main Menu with basic play & quit functionality. The Music Team has also produced additional sketches for the first level.
+## Team Member Contributions:
+### Cat: 
+Creating Basic Main Menu.
+### Charles: 
+Creating Basic Main Menu, Sketching Music.
+### Eric: 
+Configuring DryWetMidi for Music Note Production, Midi to text translation Sketching Music.
+### Kevin: 
+Creating Basic Scene 1.
+### Sumira: 
+Creating Basic Scene 1.
+### Tyler: 
+Configuring DryWetMidi for Music Note Production,
+
+# Week 4: 10-11-23
+## Overall Progress:
+**Slow, but Steady.**  The Focus of this week has been setting up minimum functionality for the first stage or level of the game. Once we are able to reach this milestone, we will be able to have a minimally functioning level. The Gameplay Team has been focused on creating Spawners for Music Notes, as well as objects for these notes to collide with. It is worth noting that the current spawners are not actually spawning notes for the music, but are instead being used to prepare the basic functions of gameplay for actual note production. Meanwhile, the UI team has begun work on displaying an options menu. 
+## Team Member Contributions:
+### Cat:
+Progress on Options Menu
+### Charles:
+Progress on Options Menu, Music Sketching
+### Eric:
+Music Sketching, Revising Note Production
+### Kevin:
+Creating Spawners & collision objects
+### Sumira:
+Creating Spawners & collision objects 
+### Tyler:
+Revising Note Production 
+
