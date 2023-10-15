@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://tatfpp6krpeq"]
+[gd_scene load_steps=4 format=3 uid="uid://dibup2qiiuwwp"]
 
 [ext_resource type="Script" path="res://Scripts/gaming.gd" id="1_tj1x3"]
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
@@ -8,8 +8,29 @@
 script = ExtResource("1_tj1x3")
 
 [node name="Collector1" parent="." instance=ExtResource("2_rgbg6")]
-position = Vector2(308, 594)
+position = Vector2(224, 480)
 
 [node name="Spawner" type="Node2D" parent="Collector1"]
-position = Vector2(310, -668)
+position = Vector2(352, -416)
+script = ExtResource("3_2n04e")
+
+[node name="Collector2" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(448, 544)
+
+[node name="Spawner" type="Node2D" parent="Collector2"]
+position = Vector2(128, -480)
+script = ExtResource("3_2n04e")
+
+[node name="Collector3" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(704, 544)
+
+[node name="Spawner" type="Node2D" parent="Collector3"]
+position = Vector2(-128, -480)
+script = ExtResource("3_2n04e")
+
+[node name="Collector4" parent="." instance=ExtResource("2_rgbg6")]
+position = Vector2(928, 480)
+
+[node name="Spawner" type="Node2D" parent="Collector4"]
+position = Vector2(-352, -416)
 script = ExtResource("3_2n04e")
