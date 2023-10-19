@@ -105,3 +105,20 @@ Creating Spawners & collision objects
 ### Tyler:
 Revising Note Production 
 
+# Week 5: 10-18-23
+## Overall Progress:
+Building Upon Foundations. Using the foundations established last week, this week has been about making modifications to create the most basic and core functionalities of the gameplay. The spawner from last week has been duplicated into multiple spawners. Collision shapes were placed on Spawners and Collector objects in order to actually track whether or not these objects are connecting. 
+## Team Member Contributions: (bold, not set in stone)
+### Cat:
+Duplicating Spawners, Implementing Basic Collision Detection, Ticket Creation
+### Charles:
+Music Sketch for Bard 2
+### Eric:
+Publishing Commenting Standards, Music jam for Bard 2, Ticket Creation
+### Kevin:
+Creating original spawner and modifying methods to adjust note falling speed & direction
+### Sumira:
+Beginning work on Detecting User Input.
+### Tyler:
+Converting Collector Script from GDScript to C#
+
