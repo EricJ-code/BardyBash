@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmvfx2kjkaih4"]
+[gd_scene load_steps=4 format=3 uid="uid://bmvfx2kjkaih4"]
 
 [sub_resource type="GDScript" id="GDScript_wxj0d"]
 script/source = "extends Control
@@ -18,6 +18,9 @@ func _on_return_pressed():
 	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
 "
 
+[sub_resource type="LabelSettings" id="LabelSettings_m8cye"]
+font_size = 40
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csdgc"]
 
 [node name="Control" type="Control"]
@@ -25,87 +28,98 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_wxj0d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16, 0.16, 0.16, 0.4)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 101.0
+offset_right = -220.0
+offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+pivot_offset = Vector2(927, -108)
 
-[node name="Options Label" type="Label" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-offset_left = -530.0
-offset_top = -17.0
-offset_right = 622.0
-offset_bottom = 631.0
-scale = Vector2(1.92546, 1.82534)
-size_flags_vertical = 3
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 83
-text = "Options"
+color = Color(1, 0, 0.65098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Settings: "
+label_settings = SubResource("LabelSettings_m8cye")
 horizontal_alignment = 1
 
-[node name="description" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 10.0
-offset_top = 617.0
-offset_right = 1451.0
-offset_bottom = 1265.0
-scale = Vector2(0.189232, 0.184492)
 size_flags_vertical = 3
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 83
-text = "*This is just a dummy options scene"
-horizontal_alignment = 1
 
-[node name="Volume" type="Label" parent="."]
-self_modulate = Color(0.490196, 0.0470588, 0.8, 1)
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = -3.0
-offset_top = 219.0
-offset_right = 1438.0
-offset_bottom = 867.0
-scale = Vector2(0.809335, 0.78142)
-size_flags_vertical = 3
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 83
-text = "Volume
-"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
 
-[node name="Volume + hbox" type="HBoxContainer" parent="."]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-offset_left = 476.0
-offset_top = 310.0
-offset_right = 503.0
-offset_bottom = 364.0
-scale = Vector2(2.84549, 1.2735)
+text = "Master: "
 
-[node name="Volume +" type="Button" parent="Volume + hbox"]
-self_modulate = Color(0.00784314, 0.470588, 0, 1)
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 33
-text = "+"
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
 
-[node name="Volume - hbox" type="HBoxContainer" parent="."]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-offset_left = 601.0
-offset_top = 307.0
-offset_right = 628.0
-offset_bottom = 361.0
-scale = Vector2(4.27844, 1.35659)
+text = "Master: "
 
-[node name="Volume -" type="Button" parent="Volume - hbox"]
-self_modulate = Color(0, 0.345098, 0.819608, 1)
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Label"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 33
-text = "-"
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_right = -129.0
+offset_bottom = 3.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Label/HSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.282
+anchor_top = 1.0
+anchor_right = -0.282
+anchor_bottom = 1.0
+offset_left = 656.846
+offset_top = -37.0
+offset_right = 721.846
 
 [node name="Return marginbox" type="MarginContainer" parent="."]
 layout_mode = 2
