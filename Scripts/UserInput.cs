@@ -48,7 +48,7 @@
 
 //The following code is in C#:
 
-//The following code is in C#:
+
 
 using Godot;
 using System;
@@ -61,12 +61,12 @@ public partial class UserInput : Godot.Node
         {
             if (keyEvent.Keycode == Key.Left)
             {
-                GD.Print("W was pressed");
+                GD.Print("R was pressed");
             }
 
             if (keyEvent.Keycode == Key.Right)
             {
-                GD.Print("R was pressed");
+                GD.Print("W was pressed");
             }
 
              if (keyEvent.Keycode == Key.Up)
