@@ -11,41 +11,41 @@ public partial class UserInput : Godot.Node
         {
             if (keyEvent.Keycode == Key.Left)
             {
-                GD.Print("T was pressed");
+                GD.Print("R was pressed");
             }
 
             if (keyEvent.Keycode == Key.Right)
             {
-                GD.Print("T was pressed");
+                GD.Print("W was pressed");
             }
 
              if (keyEvent.Keycode == Key.Up)
             {
-                GD.Print("T was pressed");
+                GD.Print("E was pressed");
             }
 
              if (keyEvent.Keycode == Key.Down)
             {
-                GD.Print("T was pressed");
+                GD.Print("Q was pressed");
             }
 
             if (keyEvent.Keycode == Key.Q)
             {
-                GD.Print("T was pressed");
+                GD.Print("Down was pressed");
             }
 
             if (keyEvent.Keycode == Key.W)
             {
-                GD.Print("T was pressed");
+                GD.Print("Left was pressed");
             }
 
             if (keyEvent.Keycode == Key.E)
             {
-                GD.Print("T was pressed");
+                GD.Print("Up was pressed");
             }
             if (keyEvent.Keycode == Key.R)
             {
-                GD.Print("T was pressed");
+                GD.Print("Right was pressed");
             }
         }
     }
