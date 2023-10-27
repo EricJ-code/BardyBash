@@ -15,6 +15,11 @@ run/main_scene="res://Tscns/Stage1Visual.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Test="*res://Scripts/Test.cs"
+Score="*res://Scripts/Score.cs"
+
 [dotnet]
 
 project/assembly_name="BardyBash"

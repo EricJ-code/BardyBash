@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcbuqc3k5o1o2"]
+
+[ext_resource type="Script" path="res://Scenes/LevelGui.gd" id="1_5tc8i"]
+[ext_resource type="Texture2D" uid="uid://o0aocesg1o4q" path="res://Assets/GUI/GrayBar.png" id="1_nimha"]
+[ext_resource type="Texture2D" uid="uid://ccuj8dnkig3xo" path="res://Assets/GUI/RedBar.png" id="2_e8isx"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+script = ExtResource("1_5tc8i")
+
+[node name="GaugeBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 22.0
+offset_right = 668.0
+offset_bottom = 87.0
+texture_under = ExtResource("1_nimha")
+texture_progress = ExtResource("2_e8isx")
+
+[node name="GaugeTotalLabel" type="Label" parent="GaugeBar"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 76.0
+offset_right = 47.0
+offset_bottom = 99.0
+text = "Gauge: 0"
+
+[node name="ComboTotalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 134.0
+offset_right = 84.0
+offset_bottom = 157.0
+text = "Combo: 0"

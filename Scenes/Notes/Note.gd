@@ -8,6 +8,7 @@ var speed = Vector2(0,0)
 @export var seconds = 2
 # Called when the node enters the 2;0scene tree for the first time.
 func _ready():
+
 	#time = Time.get_unix_time_from_system()
 	#print(speed_x)
 	# Save the speed in x, y with the position of the parent collector item.
@@ -24,6 +25,9 @@ func _process(delta):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	Score.spend_gauge(3)
+	Score.reset_combo()
 	# delete the note when it leaves the screen.
+
 	queue_free()
 	pass # Replace with function body.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dibup2qiiuwwp"]
+[gd_scene load_steps=6 format=3 uid="uid://dibup2qiiuwwp"]
 
 [ext_resource type="Script" path="res://Scripts/Stage1Base.gd" id="1_2ff4s"]
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_2n04e"]
 [ext_resource type="Script" path="res://Scripts/collector.cs" id="3_uqepu"]
+[ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="5_krlrl"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2ff4s")
@@ -50,3 +51,5 @@ action = ""
 [node name="Spawner" type="Node2D" parent="Collector4"]
 position = Vector2(-352, -416)
 script = ExtResource("3_2n04e")
+
+[node name="GUI" parent="." instance=ExtResource("5_krlrl")]
