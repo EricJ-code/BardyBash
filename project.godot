@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="BardyBash"
-run/main_scene="res://Tscns/Stage1Visual.tscn"
-config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+run/main_scene="res://Tscns/Stage.tscn"
+config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="BardyBash"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDMUT/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [input]
 

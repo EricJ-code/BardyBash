@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://dibup2qiiuwwp"]
+
+[ext_resource type="Script" path="res://Scripts/Stage1Base.gd" id="1_x3ivs"]
+[ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_svgwg"]
+[ext_resource type="Script" path="res://Scripts/collector.cs" id="3_ftlan"]
+[ext_resource type="Script" path="res://Scripts/Spawner.cs" id="4_ym8mv"]
+[ext_resource type="Script" path="res://Scripts/UserInput.cs" id="5_msc82"]
+
+[sub_resource type="GDScript" id="GDScript_h6hl7"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_x3ivs")
+
+[node name="Collector1" parent="." instance=ExtResource("2_svgwg")]
+position = Vector2(224, 480)
+script = ExtResource("3_ftlan")
+action = ""
+
+[node name="Spawner" type="Node2D" parent="Collector1"]
+position = Vector2(352, -416)
+script = ExtResource("4_ym8mv")
+
+[node name="Collector2" parent="." instance=ExtResource("2_svgwg")]
+position = Vector2(448, 544)
+script = ExtResource("3_ftlan")
+action = ""
+
+[node name="Spawner" type="Node2D" parent="Collector2"]
+position = Vector2(128, -480)
+script = ExtResource("4_ym8mv")
+
+[node name="Collector3" parent="." instance=ExtResource("2_svgwg")]
+position = Vector2(704, 544)
+script = ExtResource("3_ftlan")
+action = ""
+
+[node name="Spawner" type="Node2D" parent="Collector3"]
+position = Vector2(-128, -480)
+script = ExtResource("4_ym8mv")
+
+[node name="Collector4" parent="." instance=ExtResource("2_svgwg")]
+position = Vector2(928, 480)
+script = ExtResource("3_ftlan")
+action = ""
+
+[node name="Spawner" type="Node2D" parent="Collector4"]
+position = Vector2(-352, -416)
+script = ExtResource("4_ym8mv")
+
+[node name="UserInput" type="Node2D" parent="."]
+script = ExtResource("5_msc82")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 31.0
+text = "Restart"
+script = SubResource("GDScript_h6hl7")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
