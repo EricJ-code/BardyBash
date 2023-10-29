@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmvfx2kjkaih4"]
+[gd_scene load_steps=5 format=3 uid="uid://cg53s0x3vgox8"]
 
-[ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_vi1wj"]
+[ext_resource type="AudioStream" path="res://Music/DummySong.wav" id="1_vi1wj"]
 
 [sub_resource type="GDScript" id="GDScript_wxj0d"]
 script/source = "extends Control
@@ -43,7 +43,6 @@ font_size = 40
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csdgc"]
 
 [node name="Options" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,7 +172,6 @@ text = "Return"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vi1wj")
-bus = &"Music"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
