@@ -1,5 +1,6 @@
 extends Node2D
 
+signal Level_Complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,9 @@ func _process(delta):
 
 func spawnNote(collector):
 	get_node(collector).spawnNote()
+
+func song_over(value):
+	Level_Complete.emit()
 	
 
 

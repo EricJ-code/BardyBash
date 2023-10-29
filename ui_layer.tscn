@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5kpo757ufxwt"]
+
+[ext_resource type="PackedScene" uid="uid://bmvfx2kjkaih4" path="res://Tscns/Options_Scene.tscn" id="1_ink31"]
+[ext_resource type="Script" path="res://ui_layer.gd" id="1_rsp2n"]
+[ext_resource type="PackedScene" uid="uid://y0n8s0ue8lv7" path="res://Tscns/main_menu.tscn" id="2_tmxf7"]
+
+[node name="UI_Layer" type="CanvasLayer"]
+script = ExtResource("1_rsp2n")
+
+[node name="Options" parent="." instance=ExtResource("1_ink31")]
+
+[node name="MainMenu" parent="." instance=ExtResource("2_tmxf7")]
+unique_name_in_owner = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="link_start" from="MainMenu" to="." method="_on_main_menu_link_start"]
