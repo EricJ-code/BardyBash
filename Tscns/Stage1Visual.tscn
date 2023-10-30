@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dibup2qiiuwwp"]
+[gd_scene load_steps=7 format=3 uid="uid://dibup2qiiuwwp"]
 
 [ext_resource type="Script" path="res://Scripts/Stage1Base.gd" id="1_2ff4s"]
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_2n04e"]
 [ext_resource type="Script" path="res://Scripts/collector.cs" id="3_uqepu"]
+[ext_resource type="Script" path="res://Scripts/SongManager.cs" id="5_vh3gc"]
+[ext_resource type="AudioStream" uid="uid://cgw7t2gaisw6e" path="res://Music/DummySong.wav" id="6_q2sbc"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2ff4s")
@@ -50,3 +52,9 @@ action = ""
 [node name="Spawner" type="Node2D" parent="Collector4"]
 position = Vector2(-352, -416)
 script = ExtResource("3_2n04e")
+
+[node name="beatmapcreator" type="Node2D" parent="."]
+script = ExtResource("5_vh3gc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="beatmapcreator"]
+stream = ExtResource("6_q2sbc")

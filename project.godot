@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="BardyBash"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/midi/plugin.cfg")
+
 [input]
 
 collect1={

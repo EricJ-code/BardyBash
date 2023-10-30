@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Diagnostics;
 
 
 
@@ -19,6 +20,16 @@ public partial class textNoteTranslation : Godot.Node2D
 	public override void _Ready()
 	{
 		midiFile = MidiFile.Read("Music/DummySong.mid");
+
+
+		var notes = midiFile.GetNotes();
+        var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
+        notes.CopyTo(array, 0);
+
+		GD.Print(notes);
+
+
+
 		/*
 		Eric Estadt
 		10.2.2023
@@ -61,21 +72,259 @@ public partial class textNoteTranslation : Godot.Node2D
 		May need more work. Must calc proper wait times to compare.
 		Still needs some work may need to implement async waits.
 		*/
-		var timing = 0;
-		var timing2 = 0;
-		for (int i = 2; i < noteEvents.Count -1 ; i++)
-			{
-				if(noteEvents[i].Contains("On")){
-					GD.Print("Note On");
-					timing = noteEvents[i-2].Split(' ',':')[2].ToInt();
-					timing2 = noteEvents[i].Split(' ',':')[2].ToInt();
-					int sleepTime = timing2 - timing;
-					GD.Print("WAIT: "+ sleepTime);
-					//Thread.Sleep(sleepTime);
+
+		/*
+			Lanes|WaitTime,
+			1 lane 1
+			2 lane 2
+			3 lane 3
+			4 lane 4
+			[+ , - , + , -]
+			[#] represents waittime
+		*/
+
+	/*
+		using (StreamWriter outputFile = new StreamWriter(Path.Combine("Music/BeatMaps", "Map.txt"))){
+
+			var timing = 0;
+			var timing2 = 0;
+			for (int i = 2; i < noteEvents.Count -1 ; i++)
+				{
+					if(noteEvents[i].Contains("On")){
+						GD.Print("Note On");
+						timing = noteEvents[i-2].Split(' ',':')[2].ToInt();
+						timing2 = noteEvents[i].Split(' ',':')[2].ToInt();
+						int sleepTime = timing2 - timing;
+						GD.Print("WAIT: "+ sleepTime);
+						//Thread.Sleep(sleepTime);
+					}
+					else if( noteEvents[i].Contains("Off"))
+						GD.Print("Note Off");
 				}
-				else if( noteEvents[i].Contains("Off"))
-					GD.Print("Note Off");
-			}
+
+
+
+				outputFile.Close();
+		}
+*/
+
+/*
+			Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 96
+Note Off
+Note On
+WAIT: 384
+Note On
+WAIT: 288
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note On
+WAIT: 0
+Note Off
+Note Off
+Note Off
+Note On
+WAIT: 0
+Note Off
+Note On
+WAIT: 0
+Note Off
+Note On
+WAIT: 0
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+Note Off
+Note On
+WAIT: 48
+		*/
 		/*
 		Eric Estadt
 		10.2.2023
