@@ -7,7 +7,7 @@ using GdMUT;
 
 /// <summary>
 /// This is a test class for GDMUT. This is purely for demonstration. If you added
-/// this into your project, feel free to delete it =)  
+/// this into your project, feel free to delete it =)
 /// </summary>
 public class TestClass
 {
