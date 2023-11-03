@@ -1,7 +1,6 @@
 extends Node2D
 
 #var time = 0
-
 var speed = Vector2(0,0)
 
 

@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02jv4"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Note" type="Node2D"]
 script = ExtResource("1_md3is")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

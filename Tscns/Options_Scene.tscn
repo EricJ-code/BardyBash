@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://dee32muemwkdi"]
+
+[ext_resource type="AudioStream" path="res://Music/DummySong.wav" id="1_vi1wj"]
+
+[sub_resource type="GDScript" id="GDScript_wxj0d"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$\"Return marginbox/Return\".grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_return_pressed():
+	#get_tree().change_scene_to_file(\"res://Tscns/main_menu.tscn\")
+	self.queue_free()
+
+
+func _on_master_slider_value_changed(value):
+	var MasterID = AudioServer.get_bus_index(\"Master\")
+	AudioServer.set_bus_volume_db(MasterID, linear_to_db(value))
+
+
+func _on_music_slider_value_changed(value):
+	var MusicID = AudioServer.get_bus_index(\"Music\")
+	AudioServer.set_bus_volume_db(MusicID, linear_to_db(value))
+	
+	
+func _on_sfx_slider_value_changed(value):
+	var SFXID = AudioServer.get_bus_index(\"SFX\")
+	AudioServer.set_bus_volume_db(SFXID, linear_to_db(value))
+
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8cye"]
+font_size = 40
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csdgc"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_wxj0d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16, 0.16, 0.16, 0.4)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 101.0
+offset_right = -220.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(927, -108)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(1, 0, 0.65098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Settings: "
+label_settings = SubResource("LabelSettings_m8cye")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Master: "
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 3
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Master: "
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Music: "
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "SFX: "
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Return marginbox" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 453.0
+offset_right = 1163.0
+offset_bottom = 507.0
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="Return" type="Button" parent="Return marginbox"]
+modulate = Color(0.909804, 0, 0.0627451, 1)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_csdgc")
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Return"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vi1wj")
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Return marginbox/Return" to="." method="_on_return_pressed"]
