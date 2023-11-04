@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjbjdf3hjfhig"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fc8io"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng8mu"]
+
+[node name="Bullet" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_fc8io")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_ng8mu")
