@@ -41,8 +41,8 @@ public partial class collector : Node2D
 		//GetNode<Score>("/root/Score").add_combo();
 
 		//GD.Print(GetNode<Score>("/root/Score").gauge);
-		score.add_combo();
-		score.add_gauge(1);
+		score.addCombo();
+		score.addGauge(1);
 		
 		GD.Print("This One");
 	}

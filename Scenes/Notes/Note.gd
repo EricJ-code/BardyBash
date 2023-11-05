@@ -25,8 +25,8 @@ func _process(delta):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	Score.spend_gauge(3)
-	Score.reset_combo()
+	Score.spendGauge(3)
+	Score.resetCombo()
 	# delete the note when it leaves the screen.
 
 	queue_free()
