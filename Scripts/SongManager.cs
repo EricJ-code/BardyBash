@@ -7,12 +7,12 @@ using Melanchall.DryWetMidi.Multimedia;
 using System.Windows.Markup;
 using System.Collections.Generic;
 
-
 public partial class SongManager : Node
 {
 	public Spawner spawner;
 	public static SongManager Instance;
 	AudioStreamPlayer audioStreamPlayer;
+
 	public float songDelayInSeconds;
 	public int inputDelayInMilliseconds;
 
@@ -25,6 +25,9 @@ public partial class SongManager : Node
 	private double _timeDelay;
 
 	public List<double> timestamps;
+
+	GDScript MyGDScript;
+	
 
 	int spawnIndex = 0;
 
@@ -49,6 +52,7 @@ public partial class SongManager : Node
 		timestamps = new List<double>();
 		spawner = GetNode<Node2D>("Spawner") as Spawner;
 		ReadFromFile();
+		MyGDScript = (GDScript)GD.Load("Stage1Base.gd");
 		
 	}
 
@@ -66,7 +70,10 @@ public partial class SongManager : Node
 		{
 			if (GetAudioSourceTime() >= timestamps[spawnIndex] - Instance.noteTime)
             {
-                spawner.spawn();
+				MyGDScript.Call("spawnNote", "Collector4");
+
+				//MyGDScript.Call("spawnNote","Collector4");
+//                spawner.spawn();
                 //notes.Add(note.GetComponent<Note>());
                 //note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
@@ -94,10 +101,12 @@ public partial class SongManager : Node
 		audioStreamPlayer.Play();
 	}
 
+
+	
 	public static double GetAudioSourceTime() {
-		// first part should be correct but second part takes in frequency where to get this value??
-		//return Instance.audioStreamPlayer.GetPlaybackPosition() / Instance.audioStreamPlayer.frequency;
-		return 0;
+		
+		return Instance.audioStreamPlayer.GetPlaybackPosition() / (1536*8);
+		
 	}
 
 
