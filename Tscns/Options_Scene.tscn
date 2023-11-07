@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dee32muemwkdi"]
-
-[ext_resource type="AudioStream" path="res://Music/DummySong.wav" id="1_vi1wj"]
+[gd_scene load_steps=4 format=3 uid="uid://cg53s0x3vgox8"]
 
 [sub_resource type="GDScript" id="GDScript_wxj0d"]
 script/source = "extends Control
@@ -171,7 +169,6 @@ theme_override_font_sizes/font_size = 33
 text = "Return"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_vi1wj")
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

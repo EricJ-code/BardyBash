@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_2n04e"]
 [ext_resource type="Script" path="res://Scripts/collector.cs" id="3_uqepu"]
-[ext_resource type="Script" path="res://Scripts/UserInput.cs" id="5_6vj6b"]
 [ext_resource type="PackedScene" uid="uid://dg1kecjes0a7x" path="res://Tscns/Note.tscn" id="5_v5s8o"]
+[ext_resource type="Script" path="res://UserInput.cs" id="6_sd4n8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2ff4s")
@@ -58,4 +58,4 @@ script = ExtResource("3_2n04e")
 [node name="Note" parent="Collector4/Spawner" instance=ExtResource("5_v5s8o")]
 
 [node name="UserInput" type="Node2D" parent="."]
-script = ExtResource("5_6vj6b")
+script = ExtResource("6_sd4n8")

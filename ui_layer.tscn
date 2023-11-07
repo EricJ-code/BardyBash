@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c417yhf30mvqr"]
+[gd_scene load_steps=4 format=3 uid="uid://vs1ca8fvt3mg"]
 
-[ext_resource type="PackedScene" uid="uid://dee32muemwkdi" path="res://Tscns/Options_Scene.tscn" id="1_ink31"]
+[ext_resource type="PackedScene" uid="uid://cg53s0x3vgox8" path="res://Tscns/Options_Scene.tscn" id="1_ink31"]
 [ext_resource type="Script" path="res://ui_layer.gd" id="1_rsp2n"]
-[ext_resource type="PackedScene" uid="uid://dn1htfi3gghi1" path="res://Tscns/main_menu.tscn" id="2_tmxf7"]
+[ext_resource type="PackedScene" uid="uid://b2k7ils46csf2" path="res://Tscns/main_menu.tscn" id="2_tmxf7"]
 
 [node name="UI_Layer" type="CanvasLayer"]
 script = ExtResource("1_rsp2n")
