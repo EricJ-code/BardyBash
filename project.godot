@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BardyBash"
-run/main_scene="res://Game_Manager.tscn"
+run/main_scene="res://GameManagement/Game_Manager.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
