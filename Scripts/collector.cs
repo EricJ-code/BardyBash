@@ -25,12 +25,8 @@ public partial class collector : Node2D
 		// Use the input against the action variable.
 	}
 
-	public void _on_area_2d_area_entered(Area2D area) {
-		GD.Print("collide");
-		// Replace with function body.
-	}
-
 	public void _on_area_2d_body_entered(Node body) {
+		
 		GD.Print("collide");
 	}
 

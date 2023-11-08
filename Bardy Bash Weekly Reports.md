@@ -122,3 +122,22 @@ Beginning work on Detecting User Input.
 ### Tyler:
 Converting Collector Script from GDScript to C#
 
+# Week 6: 10-25-23
+## Overall Progress:
+Building up the Pieces. Everyone has been given specific areas to focus on and build up. The gameplay team is currently split into two main groups in which a pair is focusing on combining the MIDI translation with the spawner output and the other pair is focused on figuring out the best way to read input and make that correspond with the existing collisions. Meanwhile, the UI team is working on building up assets, and adding settings like Volume Control, Window Sizi 
+Team Member Contributions:
+### Cat:
+Added Volume Controls, Worked on Main Menu Art/Design 
+
+### Charles:
+Combining User Input with Collision detection 
+### Eric:
+Working on Midi to Note Spawner
+### Kevin:
+Working on Progress Bar 
+### Sumira:
+Created Cs file for User Input 
+### Tyler:
+Working on Midi to Note Spawner
+
+
