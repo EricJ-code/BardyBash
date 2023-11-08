@@ -23,6 +23,10 @@ Globals="*res://globals.gd"
 
 project/assembly_name="BardyBash"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDMUT/plugin.cfg", "res://addons/gut/plugin.cfg")
+
 [input]
 
 collect1={

@@ -4,7 +4,9 @@ signal Level_Complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#var UInput_method = UInput.new()
+	pass
+	
+func _on_button_pressed():
 	spawnNote("Collector1")
 	spawnNote("Collector2")
 	#spawnNote("Collector3")
@@ -23,6 +25,5 @@ func spawnNote(collector):
 func song_over(value):
 	Level_Complete.emit()
 	
-
 
 
