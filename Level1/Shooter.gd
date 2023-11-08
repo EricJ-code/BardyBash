@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const bulletPath = preload("res://Bullet.tscn")
+const bulletPath = preload("res://Level1/Bullet.tscn")
 
 func _ready():
 	pass

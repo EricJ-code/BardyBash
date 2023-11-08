@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctfwt1eu2ni5m"]
 
-[ext_resource type="Script" path="res://SpawnerDemo.gd" id="1_yocp6"]
-[ext_resource type="PackedScene" uid="uid://bjbjdf3hjfhig" path="res://Bullet.tscn" id="2_trhgx"]
+[ext_resource type="Script" path="res://Level1/SpawnerDemo.gd" id="1_yocp6"]
+[ext_resource type="PackedScene" uid="uid://bjbjdf3hjfhig" path="res://Level1/Bullet.tscn" id="2_trhgx"]
 
 [node name="SpawnerDemo" type="Node2D"]
 script = ExtResource("1_yocp6")

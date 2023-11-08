@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmt7jnks6ll32"]
 
-[ext_resource type="Script" path="res://Shooter.gd" id="1_hou8j"]
+[ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
 [ext_resource type="Texture2D" uid="uid://yskmljuclsc8" path="res://icon.svg" id="1_v2g55"]
-[ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://collectdemo.tscn" id="2_3f5tr"]
-[ext_resource type="Script" path="res://UserInput.cs" id="4_ju80x"]
-[ext_resource type="Script" path="res://collectdemo.gd" id="4_twq11"]
-[ext_resource type="Script" path="res://collectdemo2.gd" id="5_vvnq2"]
-[ext_resource type="Script" path="res://collectdemo3.gd" id="6_q0m67"]
-[ext_resource type="Script" path="res://collectdemo4.gd" id="7_0tghb"]
+[ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://Level1/collectdemo.tscn" id="2_3f5tr"]
+[ext_resource type="Script" path="res://Level1/UserInput.cs" id="4_ju80x"]
+[ext_resource type="Script" path="res://Level1/collectdemo.gd" id="4_twq11"]
+[ext_resource type="Script" path="res://Level1/collectdemo2.gd" id="5_vvnq2"]
+[ext_resource type="Script" path="res://Level1/collectdemo3.gd" id="6_q0m67"]
+[ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(106, 92)
