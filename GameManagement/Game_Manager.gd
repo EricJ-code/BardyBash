@@ -20,5 +20,6 @@ func _process(delta):
 func _on_ui_layer_load_level():
 	var startInstance = DefaultStage.instantiate()
 	add_child(startInstance)
+	#get_tree().change_scene_to_file("res://Level1/spawnertest.tscn")
 	
 	
