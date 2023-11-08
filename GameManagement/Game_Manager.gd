@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var Music = $AudioStreamPlayer
-@onready var DefaultStage = load("res://Tscns/Stage1Visual.tscn")
+@onready var DefaultStage = load("res://Level1/spawnertest.tscn")
 @onready var DefaultSong = load("res://Music/DummySong.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready():

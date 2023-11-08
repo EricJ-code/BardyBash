@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://pxvb5s21bwy4"]
+[gd_scene load_steps=4 format=3 uid="uid://pxvb5s21bwy4"]
 
 [ext_resource type="Script" path="res://GameManagement/Game_Manager.gd" id="1_cijth"]
 [ext_resource type="PackedScene" uid="uid://vs1ca8fvt3mg" path="res://GameManagement/ui_layer.tscn" id="1_jhh2t"]
+[ext_resource type="PackedScene" uid="uid://cmt7jnks6ll32" path="res://Level1/spawnertest.tscn" id="2_0e3wy"]
 
 [node name="Game_Manager" type="Node2D"]
 script = ExtResource("1_cijth")
+
+[node name="Node2D" parent="." instance=ExtResource("2_0e3wy")]
 
 [node name="UI_Layer" parent="." instance=ExtResource("1_jhh2t")]
 

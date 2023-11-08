@@ -42,6 +42,7 @@ public partial class Spawner : Node2D
 	
 	public void spawn(){
 		AddChild(note);
+		GD.Print("Parent", note.GetParent());
 	}
 
 }
