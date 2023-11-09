@@ -140,4 +140,22 @@ Created Cs file for User Input
 ### Tyler:
 Working on Midi to Note Spawner
 
+# Week 8: 11-07-23
+## Overall Progress:
+Prepping for the Alpha. Moving into this week the team has been focusing on linking all the individual parts everyone has been working on. This has caused some issues but most if not all have been resolved.
+Team Member Contributions:
+### Cat: 
+Worked on the spawner rewrite, and addressed merge conflicts with the master branch.
+### Charles:
+Worked on the music and UI.
+### Eric:
+Worked on the midi translation, researched more on CI, worked on music.
+### Kevin:
+Worked on sprite loading, animation changing to input, setting and audio buses.
+### Sumira:
+Worked on UI.
+### Tyler:
+Worked on the midi translation code.
+
+
 
