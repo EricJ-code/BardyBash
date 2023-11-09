@@ -7,29 +7,24 @@ using Melanchall.DryWetMidi.Multimedia;
 using System.Windows.Markup;
 using System.Collections.Generic;
 using System.Data;
+using System.Runtime.Serialization;
+using System.Linq;
 
 public partial class SongManager : Node
 {
 	public static SongManager Instance;
 	AudioStreamPlayer audioStreamPlayer;
-
 	public float songDelayInSeconds;
 	public int inputDelayInMilliseconds;
-
 	public string fileLocation;
 	public float noteTime;
 	public float noteSpawnY;
 	public float noteTapY;
-
-	private double _timeBegin;
-	private double _timeDelay;
-
 	public List<double> timestamps;
-
-	GDScript MyGDScript;
-
+	
 	[Signal]
     public delegate void NoteSpawnerEventHandler();
+	GDScript blScript;
 
 	int spawnIndex = 0;
 
@@ -49,37 +44,33 @@ public partial class SongManager : Node
 	{
 		Instance = this;
 		audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-		_timeBegin = Time.GetTicksUsec();
-		_timeDelay = AudioServer.GetTimeToNextMix() + AudioServer.GetOutputLatency();
 		timestamps = new List<double>();
-		
+		blScript = (GDScript)GD.Load("res://Level1/Bullet.gd");
+
 		ReadFromFile();
-		//spawner = GetNode<CharacterBody2D>("CharacterBody2D");
-		// get a script attached to the node spawner
-		MyGDScript = (GDScript)GD.Load("res://Level1/Shooter.gd");
-		
 	}	
 
 
-	// List<Bullets> bullets = new list<Bullets>(); // list of all bullets to spawn in song
+	List<GodotObject> Bullets = new List<GodotObject>(); // list of all bullets to spawn in song
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		double time = (Time.GetTicksUsec() - _timeBegin) / 1000000.0d;
-		time = Math.Max(0.0d, time - _timeDelay);
-
+		//GD.Print(GetAudioSourceTime() + " " +  (timestamps[spawnIndex] - Instance.noteTime)); // problem child
+		
 		if (spawnIndex < timestamps.Count)
 		{
-			GD.Print(GetAudioSourceTime()); // problem child
-
+			
 			if (GetAudioSourceTime() >= timestamps[spawnIndex] - Instance.noteTime)
             {	
 				EmitSignal(SignalName.NoteSpawner);
-				
-                //bullets.Add(bullet object); // assigns a note to the list of notes
-                //bullet.assignedTime = (float)timeStamps[spawnIndex]; // when to spawn the note
+
+				GodotObject bullet = (GodotObject)blScript.New(); // This is a GodotObject
+                Bullets.Add(bullet); // assigns a note to the list of notes
+                bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
+
                 spawnIndex++;
+				//GD.Print(Bullets.Count);
             }
 		}
 	}
@@ -101,15 +92,16 @@ public partial class SongManager : Node
 	}
 
 	public void StartSong() {
-		audioStreamPlayer.Play();
+		Instance.audioStreamPlayer.Play();
 	}
 
 
 	
 	public static double GetAudioSourceTime() {
 		
+		return Instance.audioStreamPlayer.GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix() - AudioServer.GetOutputLatency();
 		// (1536*8) = problem needs to be akin to Instance.audioSource.clip.frequency; but in godot
-		return Instance.audioStreamPlayer.GetPlaybackPosition() / (1536*8);
+		//return Instance.audioStreamPlayer.GetPlaybackPosition() / (1536*8);
 		
 	}
 
