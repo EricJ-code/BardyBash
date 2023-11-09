@@ -15,7 +15,6 @@ func _input(delta):
 		
 	#have a function that returns collision true...if collision true queue free 
 	#$Node2D.look_at(get_global_mouse_position())
-		
 
 
 func shoot1(): 
@@ -47,3 +46,13 @@ func shoot4():
 
 
 	#this function should probably return something to input delta
+
+
+func _on_node_2_note_spawner():
+	print("shoot")
+	shoot1()
+	shoot2()
+	
+	shoot3()
+	shoot4()
+	pass # Replace with function body.

@@ -6,7 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Music.stream = DefaultSong
-	Music.play()
+	#Music.play()
 
 func play_song(song_file):
 	Music.stream = song_file

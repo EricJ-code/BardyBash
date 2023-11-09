@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmt7jnks6ll32"]
+[gd_scene load_steps=12 format=3 uid="uid://cmt7jnks6ll32"]
 
 [ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
 [ext_resource type="Texture2D" uid="uid://yskmljuclsc8" path="res://icon.svg" id="1_v2g55"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Level1/collectdemo2.gd" id="5_vvnq2"]
 [ext_resource type="Script" path="res://Level1/collectdemo3.gd" id="6_q0m67"]
 [ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
+[ext_resource type="Script" path="res://Scripts/SongManager.cs" id="9_m7lqg"]
+[ext_resource type="AudioStream" uid="uid://cgw7t2gaisw6e" path="res://Music/DummySong.wav" id="10_5wlsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(106, 92)
@@ -63,6 +65,12 @@ script = ExtResource("6_q0m67")
 position = Vector2(381, 405)
 script = ExtResource("7_0tghb")
 
+[node name="Node2" type="Node" parent="CharacterBody2D"]
+script = ExtResource("9_m7lqg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D/Node2"]
+stream = ExtResource("10_5wlsw")
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_ju80x")
 
@@ -74,3 +82,4 @@ script = ExtResource("4_ju80x")
 [connection signal="body_exited" from="CharacterBody2D/Area2D3" to="CharacterBody2D/Area2D3" method="_on_body_exited"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_exited"]
+[connection signal="NoteSpawner" from="CharacterBody2D/Node2" to="CharacterBody2D" method="_on_node_2_note_spawner"]
