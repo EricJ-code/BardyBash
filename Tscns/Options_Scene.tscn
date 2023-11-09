@@ -1,41 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg53s0x3vgox8"]
+[gd_scene load_steps=5 format=3 uid="uid://c4vqsbkf50oi"]
 
-[ext_resource type="AudioStream" path="res://Music/DummySong.wav" id="1_vi1wj"]
-
-[sub_resource type="GDScript" id="GDScript_wxj0d"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$\"Return marginbox/Return\".grab_focus()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_return_pressed():
-	#get_tree().change_scene_to_file(\"res://Tscns/main_menu.tscn\")
-	self.queue_free()
-
-
-func _on_master_slider_value_changed(value):
-	var MasterID = AudioServer.get_bus_index(\"Master\")
-	AudioServer.set_bus_volume_db(MasterID, linear_to_db(value))
-
-
-func _on_music_slider_value_changed(value):
-	var MusicID = AudioServer.get_bus_index(\"Music\")
-	AudioServer.set_bus_volume_db(MusicID, linear_to_db(value))
-	
-	
-func _on_sfx_slider_value_changed(value):
-	var SFXID = AudioServer.get_bus_index(\"SFX\")
-	AudioServer.set_bus_volume_db(SFXID, linear_to_db(value))
-
-"
+[ext_resource type="Script" path="res://Scripts/Options2.gd" id="1_pga74"]
+[ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_vi1wj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m8cye"]
 font_size = 40
@@ -51,7 +17,7 @@ offset_top = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_wxj0d")
+script = ExtResource("1_pga74")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
