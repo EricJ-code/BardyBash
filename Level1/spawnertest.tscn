@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmt7jnks6ll32"]
+
+[ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
+[ext_resource type="Texture2D" uid="uid://yskmljuclsc8" path="res://icon.svg" id="1_v2g55"]
+[ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://Level1/collectdemo.tscn" id="2_3f5tr"]
+[ext_resource type="Script" path="res://Level1/UserInput.cs" id="4_ju80x"]
+[ext_resource type="Script" path="res://Level1/collectdemo.gd" id="4_twq11"]
+[ext_resource type="Script" path="res://Level1/collectdemo2.gd" id="5_vvnq2"]
+[ext_resource type="Script" path="res://Level1/collectdemo3.gd" id="6_q0m67"]
+[ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
+[ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
+size = Vector2(106, 92)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(3, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(589, 92)
+script = ExtResource("1_hou8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-6, 5)
+shape = SubResource("RectangleShape2D_jx5sl")
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(3.99994, 0)
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/Node2D"]
+position = Vector2(-112, 53)
+rotation = 2.39983
+
+[node name="Marker2D2" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(-39, 90)
+rotation = 2.1677
+
+[node name="Marker2D3" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(28, 91)
+rotation = 1.12748
+
+[node name="Marker2D4" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(86.9999, 72)
+rotation = 0.867429
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, 10)
+scale = Vector2(0.84375, 0.75)
+texture = ExtResource("1_v2g55")
+
+[node name="Area2D" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
+position = Vector2(-462, 423)
+script = ExtResource("4_twq11")
+
+[node name="Area2D2" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
+position = Vector2(-185, 431)
+script = ExtResource("5_vvnq2")
+
+[node name="Area2D3" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
+position = Vector2(101, 419)
+script = ExtResource("6_q0m67")
+
+[node name="Area2D4" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
+position = Vector2(381, 405)
+script = ExtResource("7_0tghb")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("4_ju80x")
+
+[node name="GUI" parent="." instance=ExtResource("9_mu3kn")]
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D/Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D2" to="CharacterBody2D/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D3" to="CharacterBody2D/Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D3" to="CharacterBody2D/Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_exited"]

@@ -25,7 +25,6 @@ public partial class collector : Node2D
 	public void collect() {
 		// Use the input against the action variable.
 	}
-
 	public void _on_area_2d_area_entered(Area2D area) {
 		//
 		
@@ -37,7 +36,7 @@ public partial class collector : Node2D
 	}
 
 	public void _on_area_2d_body_entered(Node body) {
-		var score = GetNode<Score>("/root/Score");
+	var score = GetNode<Score>("/root/Score");
 		//GetNode<Score>("/root/Score").add_combo();
 
 		//GD.Print(GetNode<Score>("/root/Score").gauge);
@@ -45,6 +44,6 @@ public partial class collector : Node2D
 		score.addGauge(1);
 		
 		GD.Print("This One");
-	}
+	 }
 
 }

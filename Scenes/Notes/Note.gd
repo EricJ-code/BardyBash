@@ -1,7 +1,6 @@
 extends Node2D
 
 #var time = 0
-
 var speed = Vector2(0,0)
 
 
@@ -21,7 +20,6 @@ func _process(delta):
 	# adjusts the note's position by multiplying the speed Vector 2 by the delta time function
 	# This should that distance per second.
 	position -= speed * delta
-
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

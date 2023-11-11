@@ -122,3 +122,59 @@ Beginning work on Detecting User Input.
 ### Tyler:
 Converting Collector Script from GDScript to C#
 
+# Week 6: 10-25-23
+## Overall Progress:
+Building up the Pieces. Everyone has been given specific areas to focus on and build up. The gameplay team is currently split into two main groups in which a pair is focusing on combining the MIDI translation with the spawner output and the other pair is focused on figuring out the best way to read input and make that correspond with the existing collisions. Meanwhile, the UI team is working on building up assets, and adding settings like Volume Control, Window Sizi 
+Team Member Contributions:
+### Cat:
+Added Volume Controls, Worked on Main Menu Art/Design 
+
+### Charles:
+Combining User Input with Collision detection 
+### Eric:
+Working on Midi to Note Spawner
+### Kevin:
+Working on Progress Bar 
+### Sumira:
+Created Cs file for User Input 
+### Tyler:
+Working on Midi to Note Spawner
+
+# Week 7: 11-1-23
+## Overall Progress:
+Revising Code and Implementing Testing infrastructure. The focus of this week has been revising existing code to improve overall functionality. The UI team has been focused on implementing a better overall UI structure that can transition more easily among scenes. Meanwhile, the Gameplay team has been focused on analyzing and revising spawner code as well as midi translations. 
+## Team Member Contributions:
+### Cat:
+Revising Scene and Node orders to support a more efficient UI layout. Implementing global features like audio control. Beginning to revise spawner code  
+### Charles:
+Drafting Music Sketches, Revising User Input for Collision Detection
+### Eric: 
+Implementing unit testing add-ons. Beginning to revise spawner code. Working on Midi to note spawner conversion. 
+### Kevin:
+Revising Progress bar, beginning work on implementing character animations.
+### Sumira:
+Working on user input for Collision Detection and make Cs files for them
+### Tyler:
+Working on Midi to note spawner conversion, revising and further researching how to do this. 
+
+
+
+# Week 8: 11-08-23
+## Overall Progress:
+Prepping for the Alpha. Moving into this week the team has been focusing on linking all the individual parts everyone has been working on. This has caused some issues but most if not all have been resolved.
+Team Member Contributions:
+### Cat: 
+Worked on the spawner rewrite, and addressed merge conflicts with the master branch.
+### Charles:
+Worked on the music and UI.
+### Eric:
+Worked on the midi translation, researched more on CI, worked on music.
+### Kevin:
+Worked on sprite loading, animation changing to input, setting and audio buses.
+### Sumira:
+Worked on UI.
+### Tyler:
+Worked on the midi translation code.
+
+
+
