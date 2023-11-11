@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://vs1ca8fvt3mg"]
 
 [ext_resource type="Script" path="res://GameManagement/ui_layer.gd" id="1_0arpl"]
-[ext_resource type="PackedScene" path="res://Tscns/Options_Scene.tscn" id="2_suxob"]
-[ext_resource type="PackedScene" path="res://Tscns/main_menu.tscn" id="3_85sge"]
+[ext_resource type="PackedScene" uid="uid://csf33dcnxdygg" path="res://Tscns/Options_Scene.tscn" id="2_suxob"]
+[ext_resource type="PackedScene" uid="uid://dn1htfi3gghi1" path="res://Tscns/main_menu.tscn" id="3_85sge"]
 
 [node name="UI_Layer" type="CanvasLayer"]
 script = ExtResource("1_0arpl")
