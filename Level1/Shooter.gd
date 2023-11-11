@@ -9,7 +9,6 @@ func _input(delta):
 		print("shoot")
 		shoot1()
 		shoot2()
-		
 		shoot3()
 		shoot4()
 		

@@ -3,10 +3,11 @@ extends Control
 #signal closed(_done)
 
 @export var _done = "done"
+signal MainMenu()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"Return marginbox/Return".grab_focus()
-	$MasterSlid
+	#$MasterSlid
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider").value = Settings._settings["buses"]["master"]
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider").value = Settings._settings["buses"]["music"]
 
@@ -24,6 +25,7 @@ func _on_return_pressed():
 	#emit_signal("closed", _done)
 	#self.queue_free()
 	self.hide()
+	
 	
 
 
@@ -48,3 +50,8 @@ func _on_sfx_slider_value_changed(value):
 	Settings.save_settings()
 
 
+
+
+func _on_button_pressed():
+	MainMenu.emit()
+	self.hide() 

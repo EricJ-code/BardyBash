@@ -9,6 +9,8 @@ script/source = "extends Control
 var scene = preload(\"res://Tscns/Options_Scene.tscn\")
 #@onready var Audio = $AudioStreamPlayer
 signal link_start()
+signal Options_show()
+
 
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play.grab_focus()
@@ -40,7 +42,9 @@ func _on_options_pressed():
 	#var instance = scene.instantiate() 
 	#add_child(instance)
 	#$Options.show()
-	$UI_Layer/Options.show()
+	#$UI_Layer/Options.show()
+	Options_show.emit()
+
 "
 
 [node name="MainMenu" type="Control"]
