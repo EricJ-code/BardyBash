@@ -6,7 +6,7 @@ signal load_level()
 func _ready():
 	#$MainMenu.connect("link_start", self, "test_print")
 	# Replace with function body.
-	pass
+	$Options.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
