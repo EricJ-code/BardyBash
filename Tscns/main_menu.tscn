@@ -37,8 +37,10 @@ func _on_quit_pressed():
 
 
 func _on_options_pressed():
-	var instance = scene.instantiate() 
-	add_child(instance)
+	#var instance = scene.instantiate() 
+	#add_child(instance)
+	#$Options.show()
+	$UI_Layer/Options.show()
 "
 
 [node name="MainMenu" type="Control"]
