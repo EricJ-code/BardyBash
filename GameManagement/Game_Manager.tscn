@@ -11,3 +11,4 @@ script = ExtResource("1_cijth")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="load_level" from="UI_Layer" to="." method="_on_ui_layer_load_level"]
+[connection signal="unload_level" from="UI_Layer" to="." method="_on_ui_layer_unload_level"]
