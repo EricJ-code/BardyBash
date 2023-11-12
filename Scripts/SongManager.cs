@@ -21,10 +21,12 @@ public partial class SongManager : Node
 	public float noteSpawnY;
 	public float noteTapY;
 	public List<double> timestamps;
-	
+
+	public Dictionary<double, int> timestampToNote = new Dictionary<double, int>();
+	GDScript blScript;
+
 	[Signal]
     public delegate void NoteSpawnerEventHandler();
-	GDScript blScript;
 
 	int spawnIndex = 0;
 
@@ -63,11 +65,15 @@ public partial class SongManager : Node
 			
 			if (GetAudioSourceTime() >= timestamps[spawnIndex] - Instance.noteTime)
             {	
-				EmitSignal(SignalName.NoteSpawner);
-
-				GodotObject bullet = (GodotObject)blScript.New(); // This is a GodotObject
-                Bullets.Add(bullet); // assigns a note to the list of notes
-                bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
+				//if (timestampToNote.ContainsKey(GetAudioSourceTime()))
+				if (timestampToNote[timestamps[spawnIndex] - Instance.noteTime] > 0) {
+					EmitSignal(SignalName.NoteSpawner, timestampToNote[timestamps[spawnIndex] - Instance.noteTime]);
+				}
+				//GodotObject bullet = (GodotObject)blScript.New(); // This is a GodotObject
+                //Bullets.Add(bullet); // assigns a note to the list of notes
+                //bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
+				
+				
 
                 spawnIndex++;
 				//GD.Print(Bullets.Count);
@@ -87,7 +93,15 @@ public partial class SongManager : Node
 		notes.CopyTo(array, 0);
 
 		SetTimeStamps(array);
-		GD.Print(timestamps.Count);
+
+		//GD.Print(timestampToNote.Values);
+		foreach (var note in timestampToNote) {
+			//GD.Print("Key: " + note.Key);
+			//GD.Print("Value: " + note.Value);
+			// foreach (var noteName in note.Value) {
+			// 	GD.Print(noteName);
+			// }
+		}
 		StartSong();
 	}
 
@@ -110,11 +124,23 @@ public partial class SongManager : Node
 	public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array) {
 		foreach (var note in array)
 		 {
-			if (note.NoteName == noteRestriction)
-			{
+			//GD.Print(note.NoteName); // name of note
+			
+			//if (note.NoteName == noteRestriction)
+			//{
 				var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, midifile.GetTempoMap());
-				timestamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
-			}
+				var time = metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + metricTimeSpan.Milliseconds / 1000f;
+
+				if (timestampToNote.ContainsKey(time)) {
+					timestampToNote[time] += 1;
+				//	timestampToNote[time] = timestampToNote[time].Concat(new Melanchall.DryWetMidi.MusicTheory.NoteName[] {note.NoteName}).ToArray();
+				} else {
+					timestampToNote.Add(time, 1);
+					//timestampToNote.Add(time, new Melanchall.DryWetMidi.MusicTheory.NoteName[] {note.NoteName});
+				}
+
+				timestamps.Add(time);
+			//}
 		 }
 	}	
 

@@ -48,11 +48,41 @@ func shoot4():
 	#this function should probably return something to input delta
 
 
-func _on_node_2_note_spawner():
+func _on_node_2_note_spawner(numberBullets):
 	print("shoot")
-	shoot1()
-	shoot2()
+	#print(numberBullets)
+	var random_numbers = []
+
+	for i in range(numberBullets):
+		var lanes = randi() % 4 + 1  # Adjust the range as needed
+		var random_number = randi() % numberBullets + 1  # Adjust the range as needed
+		random_numbers.append(lanes)
+#
+	print(random_numbers)
+	for numbers in random_numbers:
+		if numbers == 1:
+			shoot1()
+		elif numbers == 2:
+			shoot2()
+		elif numbers == 3:
+			shoot3()
+		elif numbers == 4:
+			shoot4()
+	#for number in random_numbers:
+	#	if number == 1:
+	#		shoot1()
+	#	elif number == 2:
+	#		shoot2()
+	#	elif number == 3:
+	#		shoot3()
+	#	elif number == 4:
+	#		shoot4()
+	#	else:
+	#		print("error")
+
+	# shoot1()
+	# shoot2()
 	
-	shoot3()
-	shoot4()
+	# shoot3()
+	# shoot4()
 	pass # Replace with function body.
