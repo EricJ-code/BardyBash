@@ -1,51 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn1htfi3gghi1"]
 
 [ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_jopoi"]
-
-[sub_resource type="GDScript" id="GDScript_drc8i"]
-script/source = "extends Control
-
-
-var scene = preload(\"res://Tscns/Options_Scene.tscn\")
-#@onready var Audio = $AudioStreamPlayer
-signal link_start()
-signal Options_show()
-
-
-func _ready():
-	$MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play.grab_focus()
-	#$PopupMenu.hide()'
-	#Audio.play()
-	#await Audio.finished
-	
-	
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_play_pressed():
-	#get_tree().change_scene_to_file(\"res://Tscns/Stage1Visual.tscn\")
-	link_start.emit()
-	hide()
-
-
-
-func _on_quit_pressed():
-	get_tree().quit()
-
-
-func _on_options_pressed():
-	#var instance = scene.instantiate() 
-	#add_child(instance)
-	#$Options.show()
-	#$UI_Layer/Options.show()
-	Options_show.emit()
-
-"
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qg6xg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -54,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_drc8i")
+script = ExtResource("1_qg6xg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

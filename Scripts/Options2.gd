@@ -34,6 +34,7 @@ func _on_master_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(MasterID, linear_to_db(value))
 	Settings._settings["buses"]["master"] = value
 	Settings.save_settings()
+	return true
 
 
 func _on_music_slider_value_changed(value):
@@ -41,6 +42,7 @@ func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(MusicID, linear_to_db(value))
 	Settings._settings["buses"]["music"] = value
 	Settings.save_settings()
+	return true
 	
 	
 func _on_sfx_slider_value_changed(value):
@@ -48,7 +50,7 @@ func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(SFXID, linear_to_db(value))
 	Settings._settings["buses"]["sfx"] = value
 	Settings.save_settings()
-
+	return true
 
 
 
