@@ -13,9 +13,6 @@ func _ready():
 	#Audio.play()
 	#await Audio.finished
 	
-	
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,12 +26,12 @@ func _on_play_pressed():
 	return true
 
 
-
 func _on_quit_pressed():
 	get_tree().quit()
 
 
 func _on_options_pressed():
-	var instance = scene.instantiate() 
-	add_child(instance)
+	#var instance = scene.instantiate() 
+	#add_child(instance)
+	Options_show.emit()
 	return true
