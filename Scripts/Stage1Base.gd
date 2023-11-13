@@ -4,6 +4,13 @@ signal Level_Complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Score.addCombo()
+	Score.addCombo()
+	Score.addCombo()
+	Score.addCombo()
+	Score.addCombo()
+	Score.addCombo()
+	Score.addGauge(20)
 	pass
 	
 func _on_button_pressed():

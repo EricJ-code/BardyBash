@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm0o64am331bi"]
+[gd_scene load_steps=4 format=3 uid="uid://dcbuqc3k5o1o2"]
 
 [ext_resource type="Script" path="res://Scenes/LevelGui.gd" id="1_5tc8i"]
-[ext_resource type="Texture2D" path="res://Assets/GUI/GrayBar.png" id="1_nimha"]
-[ext_resource type="Texture2D" path="res://Assets/GUI/RedBar.png" id="2_e8isx"]
+[ext_resource type="Texture2D" uid="uid://o0aocesg1o4q" path="res://Assets/GUI/GrayBar.png" id="1_nimha"]
+[ext_resource type="Texture2D" uid="uid://ccuj8dnkig3xo" path="res://Assets/GUI/RedBar.png" id="2_e8isx"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3

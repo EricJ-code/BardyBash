@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Test="*res://Scripts/Test.cs"
 Score="*res://Scripts/Score.cs"
 Globals="*res://globals.gd"
 Settings="*res://Scripts/Settings.gd"

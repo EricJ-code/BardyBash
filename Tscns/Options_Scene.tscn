@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4vqsbkf50oi"]
+[gd_scene load_steps=5 format=3 uid="uid://csf33dcnxdygg"]
 
 [ext_resource type="Script" path="res://Scripts/Options2.gd" id="1_pga74"]
 [ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_vi1wj"]

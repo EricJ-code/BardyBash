@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmt7jnks6ll32"]
+[gd_scene load_steps=11 format=3 uid="uid://cmt7jnks6ll32"]
 
 [ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
 [ext_resource type="Texture2D" uid="uid://yskmljuclsc8" path="res://icon.svg" id="1_v2g55"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Level1/collectdemo2.gd" id="5_vvnq2"]
 [ext_resource type="Script" path="res://Level1/collectdemo3.gd" id="6_q0m67"]
 [ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
+[ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(106, 92)
@@ -65,6 +66,8 @@ script = ExtResource("7_0tghb")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_ju80x")
+
+[node name="GUI" parent="." instance=ExtResource("9_mu3kn")]
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
