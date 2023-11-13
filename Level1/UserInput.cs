@@ -30,6 +30,7 @@ public partial class UserInput : Godot.Node
 			if (keyEvent.Keycode == Key.Q)
 			{
 				GD.Print("Q was pressed");
+				
 			}
 
 			if (keyEvent.Keycode == Key.W)
