@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
 [ext_resource type="Script" path="res://Scripts/SongManager.cs" id="9_m7lqg"]
 [ext_resource type="AudioStream" uid="uid://cgw7t2gaisw6e" path="res://Music/DummySong.wav" id="10_5wlsw"]
+[ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(106, 92)
@@ -73,6 +74,8 @@ stream = ExtResource("10_5wlsw")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_ju80x")
+
+[node name="GUI" parent="." instance=ExtResource("9_mu3kn")]
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
