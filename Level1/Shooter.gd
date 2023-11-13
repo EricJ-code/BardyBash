@@ -7,11 +7,15 @@ func _ready():
 func _input(delta):
 	if Input.is_action_pressed("ui_accept"):
 		print("shoot")
+		var i = 0
+	if Input.is_action_just_pressed("SpawnLeft"):
 		shoot1()
+	if Input.is_action_just_pressed("Spawn up"):
 		shoot2()
+	if Input.is_action_just_pressed("Spawn down"):
 		shoot3()
+	if Input.is_action_just_pressed("spawn right"):
 		shoot4()
-		
 	#have a function that returns collision true...if collision true queue free 
 	#$Node2D.look_at(get_global_mouse_position())
 		
