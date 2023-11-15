@@ -12,10 +12,10 @@ echo "      ░    ░                             ░  ░      ░            
 echo "                                                                        ";
 
 LANG="en_US.utf8"
-GODOT_VERSION=3.2.2
+GODOT_VERSION=4.2
 GODOT_BIN=Godot_v${GODOT_VERSION}-stable_linux_headless.64
 GODOT_ZIP=${GODOT_BIN}.zip
-GODOT_URL=https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/${GODOT_ZIP}
+GODOT_URL=https://github.com/godotengine/godot-builds/releases/download/4.2-beta5/Godot_v4.2-beta4_mono_linux_x86_64.zip
 
 if [[ -z "${GITHUB_WORKSPACE}" ]]; then
   GITHUB_WORKSPACE=$PWD
