@@ -176,5 +176,23 @@ Worked on UI.
 ### Tyler:
 Worked on the midi translation code.
 
+# Week 9: 11-15-23
+## Overall Progess:
+Getting the alpha ready. This week the team focused on getting everything ready to run and show for the alpha presentation.
+Team Member Contributions:
+### Cat: 
+Put together slides. Resolved any final issues with UI. Resolved merge conflicts. Generated and made art.
+### Charles:
+Made music and assited Cat with UI changes.
+### Eric:
+Worked on the midi translation code. Resolved any final issues with the MIDI translation. Resolved merge conflicts.  Edited the video for presentation. Generated and made art.
+### Kevin:
+Worked on the saving of settings. 
+### Sumira:
+Worked on UI.
+### Tyler:
+Worked on the midi translation code.
+
+
 
 
