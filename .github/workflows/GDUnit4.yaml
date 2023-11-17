@@ -77,9 +77,10 @@ jobs:
         uses: dorny/test-reporter@v1.6.0
         with:
           name: "test_report_${{ matrix.godot-version }}"
-          path: "/results.xml"
+          path: "reports/**/results.xml"
           reporter: java-junit
           fail-on-error: 'false'
+          working-directory: ./Latest_Build
 
       - name: "Upload Unit Test Reports"
         if: ${{ always() }}
