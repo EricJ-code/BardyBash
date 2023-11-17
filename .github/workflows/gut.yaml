@@ -2,16 +2,15 @@ name: "godot gut test"
 on: push
 
 jobs:
-  gut-godot4:
-    name: Run GUT tests for Godot 4
+  execute-gut:
+    name: Run GUT tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Godot GUT CI Test
-        uses: ./
+      - name: Docker test
+        uses: ceceppa/godot-gut-ci@main
         with:
-          godot_version: 4.1.2
-          gut_params: -gdir=res://tests/unit
+          godot_version: 4.1.1 # uses godot 3.2.1
+          gut_params: -gdir=res://tests/unit -gsuffix=.gd -gprefix=test_
     
