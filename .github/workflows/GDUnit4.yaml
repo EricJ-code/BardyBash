@@ -1,4 +1,4 @@
-name: ci-pr-example
+name: ci-GDS-testing
 run-name: ${{ github.head_ref || github.ref_name }}-ci-pr-example
 
 on:
@@ -77,7 +77,7 @@ jobs:
         uses: dorny/test-reporter@v1.6.0
         with:
           name: "test_report_${{ matrix.godot-version }}"
-          path: "reports/**/results.xml"
+          path: "/results.xml"
           reporter: java-junit
           fail-on-error: 'false'
 
