@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Test="*res://Scripts/Test.cs"
 Score="*res://Scripts/Score.cs"
-Globals="*res://globals.gd"
+Globals="*res://Scripts/globals.gd"
 Settings="*res://Scripts/Settings.gd"
 
 [dotnet]
@@ -28,7 +28,7 @@ project/assembly_name="BardyBash"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDMUT/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 
 [input]
 

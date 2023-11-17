@@ -27,9 +27,6 @@ func _on_ui_layer_load_level():
 	var childLevel = DefaultStage.instantiate()
 	add_child(childLevel)
 	#get_tree().change_scene_to_file("res://Level1/spawnertest.tscn")
-	
-	
-
 
 func _on_ui_layer_unload_level():
 	if childLevel != null: 
