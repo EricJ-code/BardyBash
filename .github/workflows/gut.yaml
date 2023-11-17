@@ -41,7 +41,7 @@ jobs:
         # default is GUTs default: 'res://.gutconfig.json'; set this to load a different config file
         config-file: "res://.myconfig.json" 
         # designate a custom url to download the godot binary from
-        custom-godot-dl-url: "https://github.com/godotengine/godot/releases/download/4.1.3-stable/Godot_v4.1.3-stable_mono_linux_x86_64.zip"
+        custom-godot-dl-url: "https://github.com/godotengine/godot/releases/download/4.1.3-stable/Godot_v4.1.3-stable_win64.exe.zip"
         # relative path to the xml file to read / write GUT's results from, recommended
         # for direct-scene users to check this file if you have issues
         result-output-file: "test_results.xml"
