@@ -2,11 +2,16 @@ name: ci-GDS-testing
 run-name: ${{ github.head_ref || github.ref_name }}-ci-pr-example
 
 on:
-  pull_request:
+  push:
     paths-ignore:
       - '**.yml'
       - '**.yaml'
       - '**.md'
+      - '**.png'
+      - '**.jpg'
+      - '**.mid'
+      - '**.wav'
+      - '**.mp3'
   workflow_dispatch:
 
 
