@@ -12,5 +12,5 @@ jobs:
         uses: ceceppa/godot-gut-ci@main
         with:
           godot_version: 4.1.1 # uses godot 3.2.1
-          gut_params: -gdir=res://tests/unit -gsuffix=.gd -gprefix=test_
+          gut_params: -gdir=res://tests/unit
     
