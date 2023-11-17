@@ -80,7 +80,7 @@ jobs:
           path: "reports/**/results.xml"
           reporter: java-junit
           fail-on-error: 'false'
-          working-directory: ./Latest_Build
+          working-directory: ./BardyBash
 
       - name: "Upload Unit Test Reports"
         if: ${{ always() }}
