@@ -26,7 +26,7 @@ public partial class SongManager : Node
 	GDScript blScript;
 
 	[Signal]
-    public delegate void NoteSpawnerEventHandler();
+	public delegate void NoteSpawnerEventHandler();
 
 	int spawnIndex = 0;
 
@@ -64,26 +64,26 @@ public partial class SongManager : Node
 		{
 			
 			if (GetAudioSourceTime() >= timestamps[spawnIndex] - Instance.noteTime)
-            {	
+			{	
 				//if (timestampToNote.ContainsKey(GetAudioSourceTime()))
 				if (timestampToNote[timestamps[spawnIndex] - Instance.noteTime] > 0) {
 					EmitSignal(SignalName.NoteSpawner, timestampToNote[timestamps[spawnIndex] - Instance.noteTime]);
 				}
 				//GodotObject bullet = (GodotObject)blScript.New(); // This is a GodotObject
-                //Bullets.Add(bullet); // assigns a note to the list of notes
-                //bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
+				//Bullets.Add(bullet); // assigns a note to the list of notes
+				//bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
 				
 				
 
-                spawnIndex++;
+				spawnIndex++;
 				//GD.Print(Bullets.Count);
-            }
+			}
 		}
 	}
 
 	public void ReadFromFile()
 	{
-		midifile = MidiFile.Read("Music/DummySong.mid");
+		midifile = MidiFile.Read("Music/Oscar-Sketch-1.mid");
 		GetDataFromMidi();
 	}
 

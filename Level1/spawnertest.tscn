@@ -1,76 +1,85 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmt7jnks6ll32"]
+[gd_scene load_steps=14 format=3 uid="uid://cmt7jnks6ll32"]
 
 [ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
-[ext_resource type="Texture2D" uid="uid://yskmljuclsc8" path="res://icon.svg" id="1_v2g55"]
 [ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://Level1/collectdemo.tscn" id="2_3f5tr"]
+[ext_resource type="Texture2D" uid="uid://bwalv0f0pxsdl" path="res://Assets/Oscar/LVL1-Prototype-Oscar.png" id="3_owy4t"]
 [ext_resource type="Script" path="res://Level1/UserInput.cs" id="4_ju80x"]
 [ext_resource type="Script" path="res://Level1/collectdemo.gd" id="4_twq11"]
 [ext_resource type="Script" path="res://Level1/collectdemo2.gd" id="5_vvnq2"]
 [ext_resource type="Script" path="res://Level1/collectdemo3.gd" id="6_q0m67"]
 [ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
 [ext_resource type="Script" path="res://Scripts/SongManager.cs" id="9_m7lqg"]
-[ext_resource type="AudioStream" uid="uid://cgw7t2gaisw6e" path="res://Music/DummySong.wav" id="10_5wlsw"]
 [ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
+[ext_resource type="AudioStream" uid="uid://dnrc4jkyy88sm" path="res://Music/Oscar-Sketch-1.wav" id="10_70r01"]
+[ext_resource type="Texture2D" uid="uid://cxeo3u2651leu" path="res://Assets/LVL1-Prototype-BG.png" id="12_vi42w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
-size = Vector2(106, 92)
+size = Vector2(65, 161)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -5.0
+offset_right = 1915.0
+offset_bottom = 1080.0
+scale = Vector2(0.601768, 0.599125)
+texture = ExtResource("12_vi42w")
+expand_mode = 1
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(589, 92)
+position = Vector2(595, 233)
 script = ExtResource("1_hou8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6, 5)
+position = Vector2(-20.5, -29.5)
 shape = SubResource("RectangleShape2D_jx5sl")
 
 [node name="Node2D" type="Node2D" parent="CharacterBody2D"]
 position = Vector2(3.99994, 0)
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D/Node2D"]
-position = Vector2(-112, 53)
-rotation = 2.39983
+position = Vector2(-61, -72)
+rotation = 2.379
 
 [node name="Marker2D2" type="Marker2D" parent="CharacterBody2D"]
-position = Vector2(-39, 90)
-rotation = 2.1677
+position = Vector2(-18, -45)
+rotation = 1.99637
 
 [node name="Marker2D3" type="Marker2D" parent="CharacterBody2D"]
-position = Vector2(28, 91)
+position = Vector2(32, -3)
 rotation = 1.12748
 
 [node name="Marker2D4" type="Marker2D" parent="CharacterBody2D"]
-position = Vector2(86.9999, 72)
-rotation = 0.867429
+position = Vector2(17, -71)
+rotation = 0.833091
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-3, 10)
-scale = Vector2(0.84375, 0.75)
-texture = ExtResource("1_v2g55")
+position = Vector2(-20, -31)
+scale = Vector2(0.551302, 0.546667)
+texture = ExtResource("3_owy4t")
 
 [node name="Area2D" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
-position = Vector2(-462, 423)
+position = Vector2(-432, 332)
 script = ExtResource("4_twq11")
 
 [node name="Area2D2" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
-position = Vector2(-185, 431)
+position = Vector2(-157, 331)
 script = ExtResource("5_vvnq2")
 
 [node name="Area2D3" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
-position = Vector2(101, 419)
+position = Vector2(132, 324)
 script = ExtResource("6_q0m67")
 
 [node name="Area2D4" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
-position = Vector2(381, 405)
+position = Vector2(407, 318)
 script = ExtResource("7_0tghb")
 
 [node name="Node2" type="Node" parent="CharacterBody2D"]
 script = ExtResource("9_m7lqg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D/Node2"]
-stream = ExtResource("10_5wlsw")
+stream = ExtResource("10_70r01")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_ju80x")
