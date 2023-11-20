@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn1htfi3gghi1"]
 
-[ext_resource type="AudioStream" path="res://Music/DummySong.wav" id="1_jopoi"]
+[ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_jopoi"]
 
 [sub_resource type="GDScript" id="GDScript_drc8i"]
 script/source = "extends Control

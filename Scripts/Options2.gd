@@ -2,6 +2,8 @@ extends Control
 
 #signal closed(_done)
 
+
+
 @export var _done = "done"
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +13,7 @@ func _ready():
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider").value = Settings._settings["buses"]["music"]
 
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider").value = Settings._settings["buses"]["sfx"]
-
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -46,4 +47,12 @@ func _on_sfx_slider_value_changed(value):
 	Settings._settings["buses"]["sfx"] = value
 	Settings.save_settings()
 
-
+# Here you can manually modifiy the screen settings. The issue is it doesn't center or save your info.
+func _on_window_sizer_item_selected(index):
+	match index:
+		0:
+			get_window().set_size(Vector2(1280,720))
+		1: 
+			get_window().set_size(Vector2(1920,1080))
+		2: 
+			get_window().set_size(Vector2(3840,2160))
