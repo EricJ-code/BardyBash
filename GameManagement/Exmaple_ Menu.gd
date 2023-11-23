@@ -1,8 +1,8 @@
 extends Control
 
 func _on_play_pressed():
-	pass
-
+	get_tree().change_scene_to_file("res://GameManagement/ui_layer(duplicate).tscn")
+#paths might have to be changes
 
 
 func _on_options_pressed():
@@ -10,7 +10,7 @@ func _on_options_pressed():
 
 
 func _on_Quit_pressed():
-	pass
+	get_tree().quit()
 
 
 

@@ -1,20 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://vs1ca8fvt3mg"]
+[gd_scene load_steps=8 format=3 uid="uid://c7qouwg7bix64"]
 
-[ext_resource type="Script" path="res://GameManagement/ui_layer.gd" id="1_0arpl"]
-[ext_resource type="PackedScene" uid="uid://b8ql5jtuw51w5" path="res://Tscns/Options_Scene.tscn" id="2_suxob"]
-[ext_resource type="PackedScene" uid="uid://dn1htfi3gghi1" path="res://Tscns/main_menu.tscn" id="3_85sge"]
-[ext_resource type="Script" path="res://GameManagement/Exmaple_ Menu.gd" id="4_qmwcm"]
-[ext_resource type="Script" path="res://GameManagement/PlayButton.gd" id="4_s6va1"]
-[ext_resource type="Script" path="res://GameManagement/OptionsButton2.gd" id="5_t66nc"]
-[ext_resource type="Script" path="res://GameManagement/ExitButton.gd" id="6_bmcyl"]
+[ext_resource type="Script" path="res://GameManagement/ui_layer.gd" id="1_dtvev"]
+[ext_resource type="PackedScene" uid="uid://dn1htfi3gghi1" path="res://Tscns/main_menu.tscn" id="2_ihp7w"]
+[ext_resource type="PackedScene" uid="uid://b8ql5jtuw51w5" path="res://Tscns/Options_Scene.tscn" id="3_fr2yt"]
+[ext_resource type="Script" path="res://GameManagement/Exmaple_ Menu.gd" id="4_n7f0y"]
+[ext_resource type="Script" path="res://GameManagement/PlayButton.gd" id="5_pq3ci"]
+[ext_resource type="Script" path="res://GameManagement/OptionsButton2.gd" id="6_n6801"]
+[ext_resource type="Script" path="res://GameManagement/ExitButton.gd" id="7_p85g7"]
 
-[node name="UI_Layer2" type="CanvasLayer"]
-script = ExtResource("1_0arpl")
+[node name="UI_Layer" type="CanvasLayer"]
+script = ExtResource("1_dtvev")
 
-[node name="MainMenu" parent="." instance=ExtResource("3_85sge")]
+[node name="MainMenu" parent="." instance=ExtResource("2_ihp7w")]
 unique_name_in_owner = true
 
-[node name="Options" parent="." instance=ExtResource("2_suxob")]
+[node name="Options" parent="." instance=ExtResource("3_fr2yt")]
 
 [node name="Pause Menu" type="Control" parent="."]
 layout_mode = 3
@@ -37,7 +37,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_qmwcm")
+script = ExtResource("4_n7f0y")
 
 [node name="MarginContainer" type="MarginContainer" parent="Exmaple_ Menu"]
 layout_mode = 0
@@ -49,15 +49,15 @@ layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("4_s6va1")
+script = ExtResource("5_pq3ci")
 
 [node name="OptionsButton2" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("5_t66nc")
+script = ExtResource("6_n6801")
 
 [node name="ExitButton" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("6_bmcyl")
+script = ExtResource("7_p85g7")
 
 [connection signal="Options_show" from="MainMenu" to="." method="_on_main_menu_options_show"]
 [connection signal="link_start" from="MainMenu" to="." method="_on_main_menu_link_start"]
