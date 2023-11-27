@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dssolmno6ioyo"]
+[gd_scene load_steps=5 format=3 uid="uid://dssolmno6ioyo"]
+
+[ext_resource type="Script" path="res://GameManagement/Exmaple_ Menu.gd" id="1_443qh"]
+[ext_resource type="Script" path="res://GameManagement/PlayButton.gd" id="2_j0lhg"]
+[ext_resource type="Script" path="res://GameManagement/OptionsButton2.gd" id="3_dbysq"]
+[ext_resource type="Script" path="res://GameManagement/ExitButton.gd" id="4_c8udt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -6,3 +11,107 @@ anchor_right = 1.006
 anchor_bottom = 0.997
 offset_right = 0.0878906
 offset_bottom = -0.0560303
+
+[node name="Pause Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Pause Menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause Menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Pause Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pause Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="Pause Menu/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3"]
+layout_mode = 2
+
+[node name="Background" type="Control" parent="Pause Menu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Menu Container" type="VBoxContainer" parent="Pause Menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Pause Menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PopupMenu" type="PopupMenu" parent="Pause Menu"]
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu/PopupMenu"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause Menu/PopupMenu"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Pause Menu/PopupMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pause Menu"]
+
+[node name="Exmaple_ Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_443qh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Exmaple_ Menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Exmaple_ Menu/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_j0lhg")
+
+[node name="OptionsButton2" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_dbysq")
+
+[node name="ExitButton" type="Button" parent="Exmaple_ Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_c8udt")
+
+[connection signal="pressed" from="Exmaple_ Menu/MarginContainer/VBoxContainer/PlayButton" to="Exmaple_ Menu/MarginContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="Exmaple_ Menu/MarginContainer/VBoxContainer/OptionsButton2" to="Exmaple_ Menu/MarginContainer/VBoxContainer/OptionsButton2" method="_on_pressed"]
+[connection signal="pressed" from="Exmaple_ Menu/MarginContainer/VBoxContainer/ExitButton" to="Exmaple_ Menu/MarginContainer/VBoxContainer/ExitButton" method="_on_pressed"]
