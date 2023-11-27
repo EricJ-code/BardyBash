@@ -18,6 +18,25 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect2" type="ColorRect" parent="Pause Menu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 766.0
+offset_bottom = 109.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 20.373
+anchor_bottom = 11.336
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 332.08
+offset_bottom = 196.56
+color = Color(1, 1, 1, 0.376471)
+
 [node name="TextureRect" type="TextureRect" parent="Pause Menu"]
 layout_mode = 0
 offset_right = 40.0
