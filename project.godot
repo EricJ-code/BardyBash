@@ -22,6 +22,10 @@ Score="*res://Scripts/Score.cs"
 Globals="*res://Scripts/globals.gd"
 Settings="*res://Scripts/Settings.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="BardyBash"
