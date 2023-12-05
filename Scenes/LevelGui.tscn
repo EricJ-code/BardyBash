@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcbuqc3k5o1o2"]
+[gd_scene load_steps=6 format=3 uid="uid://dcbuqc3k5o1o2"]
 
 [ext_resource type="Script" path="res://Scenes/LevelGui.gd" id="1_5tc8i"]
 [ext_resource type="Texture2D" uid="uid://o0aocesg1o4q" path="res://Assets/GUI/GrayBar.png" id="1_nimha"]
 [ext_resource type="Texture2D" uid="uid://ccuj8dnkig3xo" path="res://Assets/GUI/RedBar.png" id="2_e8isx"]
+[ext_resource type="Texture2D" uid="uid://bla5430npml5g" path="res://Assets/GUI/GrayBossHealth.png" id="4_3yaix"]
+[ext_resource type="Texture2D" uid="uid://c1irw4e0v64hj" path="res://Assets/GUI/RedBossHealth.png" id="5_00tne"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -35,3 +37,32 @@ offset_top = 134.0
 offset_right = 84.0
 offset_bottom = 157.0
 text = "Combo: 0"
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 97.0
+offset_right = 666.0
+offset_bottom = 114.0
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("4_3yaix")
+texture_progress = ExtResource("5_00tne")
+
+[node name="PlayerHealthLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 172.0
+offset_right = 185.0
+offset_bottom = 198.0
+text = "Player Health: 100"
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 203.0
+offset_right = 231.0
+offset_bottom = 243.0
+value = 100.0
+texture_under = ExtResource("4_3yaix")
+texture_progress = ExtResource("5_00tne")
