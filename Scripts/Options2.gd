@@ -11,7 +11,7 @@ func _ready():
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider").value = Settings._settings["buses"]["master"]
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider").value = Settings._settings["buses"]["music"]
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider").value = Settings._settings["buses"]["sfx"]
-	get_node("VBoxContainer/Window_Sizer").select(Settings._settings["window"]["window_size"])
+	_on_window_sizer_item_selected(Settings._settings["window"]["window_size"])
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
