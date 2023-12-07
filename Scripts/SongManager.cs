@@ -54,7 +54,7 @@ public partial class SongManager : Node
 
 
 	List<GodotObject> Bullets = new List<GodotObject>(); // list of all bullets to spawn in song
-	
+	int counter = 1;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -66,15 +66,19 @@ public partial class SongManager : Node
 			if (GetAudioSourceTime() >= timestamps[spawnIndex] - Instance.noteTime)
             {	
 				//if (timestampToNote.ContainsKey(GetAudioSourceTime()))
-				if (timestampToNote[timestamps[spawnIndex] - Instance.noteTime] > 0) {
-					EmitSignal(SignalName.NoteSpawner, timestampToNote[timestamps[spawnIndex] - Instance.noteTime]);
-				}
+				if (counter == 4) 
+					counter = 1;
+				else if (counter == 1 || counter == 3) 
+					if (timestampToNote[timestamps[spawnIndex] - Instance.noteTime] > 0) {
+						EmitSignal(SignalName.NoteSpawner, timestampToNote[timestamps[spawnIndex] - Instance.noteTime]);
+					}
 				//GodotObject bullet = (GodotObject)blScript.New(); // This is a GodotObject
                 //Bullets.Add(bullet); // assigns a note to the list of notes
                 //bullet.Set("assignedTime", (float)timestamps[spawnIndex]);  // when to spawn the note
 				
 				
-
+				GD.Print(counter);
+				counter++;
                 spawnIndex++;
 				//GD.Print(Bullets.Count);
             }
@@ -126,8 +130,8 @@ public partial class SongManager : Node
 		 {
 			//GD.Print(note.NoteName); // name of note
 			
-			//if (note.NoteName == noteRestriction)
-			//{
+			//if (note.NoteName == noteRestriction) {
+				//Melanchall.DryWetMidi.
 				var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, midifile.GetTempoMap());
 				var time = metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + metricTimeSpan.Milliseconds / 1000f;
 
