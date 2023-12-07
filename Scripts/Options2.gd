@@ -3,16 +3,15 @@ extends Control
 #signal closed(_done)
 
 
-
 @export var _done = "done"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"Return marginbox/Return".grab_focus()
-	$MasterSlid
+	#$MasterSlid
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider").value = Settings._settings["buses"]["master"]
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider").value = Settings._settings["buses"]["music"]
-
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider").value = Settings._settings["buses"]["sfx"]
+	get_node("VBoxContainer/Window_Sizer").select(Settings._settings["window"]["window_size"])
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,8 +50,19 @@ func _on_sfx_slider_value_changed(value):
 func _on_window_sizer_item_selected(index):
 	match index:
 		0:
-			get_window().set_size(Vector2(1280,720))
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			Settings._settings["window"]["window_size"] = 0
+			Settings.save_settings()
+			
 		1: 
-			get_window().set_size(Vector2(1920,1080))
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			Settings._settings["window"]["window_size"] = 1
+			Settings.save_settings()
+	
 		2: 
-			get_window().set_size(Vector2(3840,2160))
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			Settings._settings["window"]["window_size"] = 2
+			Settings.save_settings()
+			
+			
+			
