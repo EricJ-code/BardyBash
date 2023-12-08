@@ -10,9 +10,14 @@ size = Vector2(24, 17)
 position = Vector2(-5, -6)
 script = ExtResource("1_af7rm")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2, -1.5)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2cpnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -1.5)
 shape = SubResource("RectangleShape2D_r0ggg")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

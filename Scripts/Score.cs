@@ -23,10 +23,15 @@ public partial class Score : Node
 	[Signal]
 	public delegate void ComboChangedEventHandler();
 
+	[Signal]
+	public delegate void PlayerHealthChangedEventHandler();
+	[Signal]
+	public delegate void BossHealthChangedEventHandler();
 	private int gauge = 0;
 	private int combo = 0;
 	private int multiplier = 1;
-
+	private int bossHealth = 10;
+	private int playerHealth = 100;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -115,5 +120,35 @@ public partial class Score : Node
 	// [Sets the multiplier to 1.]
 	public void resetMultiplier(){
 		multiplier = 1;
+	}
+	public void heal(){
+		playerHealth =100;
+		EmitSignal(SignalName.PlayerHealthChanged);
+
+	}
+	public void takeDamage(int amt)
+	{
+		playerHealth -= amt;
+		EmitSignal(SignalName.PlayerHealthChanged);
+
+	}
+	public void damageBoss(int amt){
+		bossHealth -= amt;
+		EmitSignal(SignalName.BossHealthChanged);
+
+
+	}
+	public int getBossHealth(){
+		return bossHealth;
+	}
+	public int getPlayerHealth(){
+		return playerHealth;
+	}
+	public void startScore(){
+		gauge = 0;
+		combo = 0;
+		multiplier = 1;
+		bossHealth = 10;
+		playerHealth = 100;
 	}
 }

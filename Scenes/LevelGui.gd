@@ -8,6 +8,8 @@ func _ready():
 	
 	Score.GaugeChanged.connect(_on_gauge_changed)
 	Score.ComboChanged.connect(_on_combo_changed)
+	Score.BossHealthChanged.connect(_on_boss_health_changed)
+	Score.PlayerHealthChanged.connect(_on_player_health_changed)
 
 	#[KS]
 	#[_on_gauge_changed]
@@ -25,7 +27,12 @@ func _on_combo_changed():
 	#$ComboTotalLabel.text = "Combo: " + str(Score.combo)
 	$ComboTotalLabel.text = "Combo: " + str(Score.getCombo())
 	
+func _on_boss_health_changed():
+	$BossHealthBar.value = Score.getBossHealth()
 
+func _on_player_health_changed():
+	$PlayerHealthBar.value = Score.getPlayerHealth()
+	$PlayerHealthLabel.text = "Player Health: " + str(Score.getPlayerHealth())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

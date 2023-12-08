@@ -2,18 +2,18 @@ extends Control
 
 #signal closed(_done)
 
+
 @export var _done = "done"
 signal MainMenu()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"Return marginbox/Return".grab_focus()
-	#$MasterSlid
+
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider").value = Settings._settings["buses"]["master"]
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider").value = Settings._settings["buses"]["music"]
-
 	get_node("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider").value = Settings._settings["buses"]["sfx"]
-
-
+	_on_window_sizer_item_selected(Settings._settings["window"]["window_size"])
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -53,6 +53,26 @@ func _on_sfx_slider_value_changed(value):
 	return true
 
 
+# Here you can manually modifiy the screen settings. The issue is it doesn't center or save your info.
+func _on_window_sizer_item_selected(index):
+	match index:
+		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			Settings._settings["window"]["window_size"] = 0
+			Settings.save_settings()
+			
+		1: 
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			Settings._settings["window"]["window_size"] = 1
+			Settings.save_settings()
+	
+		2: 
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			Settings._settings["window"]["window_size"] = 2
+			Settings.save_settings()
+			
+			
+			
 
 func _on_button_pressed():
 	MainMenu.emit()

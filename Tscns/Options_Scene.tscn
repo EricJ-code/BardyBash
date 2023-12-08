@@ -12,11 +12,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -2.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pga74")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -124,6 +123,26 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 367.0
+offset_right = 291.0
+offset_bottom = 407.0
+
+[node name="Window_Sizer" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+keep_pressed_outside = true
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed (Default)"
+popup/item_0/id = 0
+popup/item_1/text = "Full Screen Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Full Screen"
+popup/item_2/id = 2
+
 [node name="Return marginbox" type="MarginContainer" parent="."]
 layout_mode = 2
 offset_left = 21.0
@@ -160,5 +179,6 @@ text = "Quit to Menu
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/Window_Sizer" to="." method="_on_window_sizer_item_selected"]
 [connection signal="pressed" from="Return marginbox/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_button_pressed"]
