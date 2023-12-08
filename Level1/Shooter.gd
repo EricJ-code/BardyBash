@@ -65,12 +65,16 @@ func _on_node_2_note_spawner(numberBullets):
 	for numbers in random_numbers:
 		if numbers == 1:
 			shoot1()
-		elif numbers == 2:
+			break
+		if numbers == 2:
 			shoot2()
-		elif numbers == 3:
+			break
+		if numbers == 3:
 			shoot3()
-		elif numbers == 4:
+			break
+		if numbers == 4:
 			shoot4()
+			break
 	#for number in random_numbers:
 	#	if number == 1:
 	#		shoot1()

@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn1htfi3gghi1"]
+[gd_scene load_steps=4 format=3 uid="uid://dn1htfi3gghi1"]
 
-[ext_resource type="AudioStream" uid="uid://duh5ab5wj6t1h" path="res://Music/DummySong.wav" id="1_jopoi"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qg6xg"]
 [ext_resource type="Texture2D" uid="uid://c1s3x3rxmgeov" path="res://Assets/BB_alpha_BG.png" id="2_84o4k"]
 [ext_resource type="Texture2D" uid="uid://bbfo6qf0bauoi" path="res://Assets/BardyBash-Logo.png" id="3_gl3m0"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,7 +109,6 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_jopoi")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]

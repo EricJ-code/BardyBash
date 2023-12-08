@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Level1/collectdemo4.gd" id="7_0tghb"]
 [ext_resource type="Script" path="res://Scripts/SongManager.cs" id="9_m7lqg"]
 [ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
-[ext_resource type="AudioStream" uid="uid://dnrc4jkyy88sm" path="res://Music/Oscar-Sketch-1.wav" id="10_70r01"]
+[ext_resource type="AudioStream" uid="uid://cenmn4p6elnpj" path="res://Music/Oscar-Sketch-2.wav" id="10_5mfjk"]
 [ext_resource type="Texture2D" uid="uid://cxeo3u2651leu" path="res://Assets/LVL1-Prototype-BG.png" id="12_vi42w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
@@ -79,7 +79,7 @@ script = ExtResource("7_0tghb")
 script = ExtResource("9_m7lqg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody2D/Node2"]
-stream = ExtResource("10_70r01")
+stream = ExtResource("10_5mfjk")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_ju80x")
