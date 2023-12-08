@@ -12,7 +12,8 @@ var _settings = {
 
 		"buses":{"master":1,
 				"music":1,
-				"sfx":1}		
+				"sfx":1},
+		"window":["window_size":0]		
 	}
 """
 var _settings = {

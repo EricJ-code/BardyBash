@@ -6,6 +6,7 @@ extends Node
 @export var ability_3_cost = 30
 @export var ability_4_cost = 30
 var on_cooldown = false
+var dmg_multiplier = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -61,7 +62,7 @@ func ability3():
 	if Score.getGauge() >= ability_3_cost:
 		Score.spendGauge(ability_3_cost)
 		$Esmerelda3.play_use()
-
+		double_dmg_mult()
 		print("Ability 3 used")
 		on_cooldown = true
 		$SlowdownTimer.set_wait_time($SlowdownTimer.get_time_left()+10)
@@ -75,9 +76,10 @@ func ability4():
 		print("Ability 4 used")
 		on_cooldown = true
 		$Cooldown.start()
-		Score.damageBoss(1)
+		Score.damageBoss(dmg_multiplier * 1)
 
 func _on_slowdown_timer_timeout():
+	reset_dmg_mult()
 	$Esmerelda3.choose_anim()
 	print("Stopping slowdown")
 	$SlowdownTimer.stop()
@@ -90,3 +92,8 @@ func _on_multiplier_timer_timeout():
 	#
 	pass # Replace with function body.
 
+func double_dmg_mult():
+	dmg_multiplier = 2
+
+func reset_dmg_mult():
+	dmg_multiplier = 1
