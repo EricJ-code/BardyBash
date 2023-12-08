@@ -7,11 +7,11 @@
 [node name="UI_Layer" type="CanvasLayer"]
 script = ExtResource("1_0arpl")
 
-[node name="Options" parent="." instance=ExtResource("2_suxob")]
-
 [node name="MainMenu" parent="." instance=ExtResource("3_85sge")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Options" parent="." instance=ExtResource("2_suxob")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -20,4 +20,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
+[connection signal="Options_show" from="MainMenu" to="." method="_on_main_menu_options_show"]
 [connection signal="link_start" from="MainMenu" to="." method="_on_main_menu_link_start"]
+[connection signal="MainMenu" from="Options" to="." method="_on_options_main_menu"]

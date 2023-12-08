@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dibup2qiiuwwp"]
+[gd_scene load_steps=6 format=3 uid="uid://dibup2qiiuwwp"]
 
 [ext_resource type="Script" path="res://Scripts/Stage1Base.gd" id="1_2ff4s"]
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_2n04e"]
 [ext_resource type="Script" path="res://Scripts/collector.cs" id="3_uqepu"]
+[ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="5_krlrl"]
 [ext_resource type="PackedScene" uid="uid://dg1kecjes0a7x" path="res://Tscns/Note.tscn" id="5_v5s8o"]
 [ext_resource type="Script" path="res://UserInput.cs" id="6_sd4n8"]
 
@@ -55,6 +56,7 @@ script = ExtResource("3_uqepu")
 position = Vector2(-376, -410)
 script = ExtResource("3_2n04e")
 
+[node name="GUI" parent="." instance=ExtResource("5_krlrl")]
 [node name="Note" parent="Collector4/Spawner" instance=ExtResource("5_v5s8o")]
 
 [node name="UserInput" type="Node2D" parent="."]

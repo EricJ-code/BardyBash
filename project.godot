@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Test="*res://Scripts/Test.cs"
 Score="*res://Scripts/Score.cs"
-Globals="*res://globals.gd"
+Globals="*res://Scripts/globals.gd"
 Settings="*res://Scripts/Settings.gd"
 
 [display]
@@ -31,7 +32,7 @@ project/assembly_name="BardyBash"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDMUT/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 
 [input]
 
@@ -78,6 +79,26 @@ action4={
 Pause={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+SpawnLeft={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":49,"key_label":0,"unicode":49,"echo":false,"script":null)
+]
+}
+"Spawn up"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":50,"key_label":0,"unicode":50,"echo":false,"script":null)
+]
+}
+"Spawn down"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":51,"key_label":0,"unicode":51,"echo":false,"script":null)
+]
+}
+"spawn right"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":52,"key_label":0,"unicode":52,"echo":false,"script":null)
 ]
 }
 

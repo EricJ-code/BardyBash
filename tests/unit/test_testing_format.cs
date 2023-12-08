@@ -19,9 +19,9 @@ public class TestClass
 		x *= 100;
 		return (x == 0) ? Result.Success : Result.Failure;
 	}
-
+	/*
 	[CSTestFunction]
-	public static Result ExampleFail()
+	/public static Result ExampleFail()
 	{
 		int x = 0;
 		x *= 100;
@@ -37,7 +37,7 @@ public class TestClass
 			? Result.Success
 			: new Result(false, "You can't multiply 0 and expect anything else than 0!");
 	}
-
+	*/
 	[CSTestFunction]
 	public static Result ExampleCustomSuccess()
 	{

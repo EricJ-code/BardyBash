@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxpqavc30oxt8"]
+
+[sub_resource type="GDScript" id="GDScript_drc8i"]
+script/source = "extends Control
+
+# I made a new script on my side. I hope it does cause you issues on your end but it might. 
+#If it does I apologize for the incovienece.
+
+
+#The Keyboard and switching scenes functinality is running! I still need to 
+# look into the overlay option.
+func _ready():
+	$MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play.grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file(\"res://game_scene_placeholder.tscn\")
+
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file(\"res://Options_Scene.tscn\")
+
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_drc8i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0, 0.317647, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 83
+text = "Bardy
+Bash"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 500
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Play"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+action_mode = 0
+text = "Options"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
