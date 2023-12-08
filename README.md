@@ -13,7 +13,7 @@ Follow these instructions to set up, play, and understand the game.
 
 ### Prerequisites
 
-- [Godot Engine](https://godotengine.org/download)
+- [Godot Engine](https://godotengine.org/download) [The .NET Version]
 
 ### Installation
 
