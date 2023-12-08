@@ -110,19 +110,18 @@ This use case allows players to fine-tune their audio experience within the game
 
    - Game registers successful hits and updates the player's score.
 
-## Testing with GUT
+## Testing with GDunit4
 
   
 
-**To run tests using GUT (Godot Unit Test framework) 
+**To run tests using GDUnit4
 
-  
 
-   - In the Godot editor, navigate to the "GUT" tab.
+   - In the Godot editor, navigate to the "GdUnit4" tab at the top left 
 
-   - Click "Run Tests" to execute your tests.
+   - Click the play button to execute your tests.
 
-   - Review the results in the GUT tab.
+   - Review the results in the GDUnit4 tab.
 
 ## Testing using GDMUT
 
