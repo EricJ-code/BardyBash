@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmt7jnks6ll32"]
+[gd_scene load_steps=16 format=3 uid="uid://cmt7jnks6ll32"]
 
 [ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
 [ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://Level1/collectdemo.tscn" id="2_3f5tr"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dcbuqc3k5o1o2" path="res://Scenes/LevelGui.tscn" id="9_mu3kn"]
 [ext_resource type="AudioStream" uid="uid://dnrc4jkyy88sm" path="res://Music/Oscar-Sketch-1.wav" id="10_70r01"]
 [ext_resource type="Texture2D" uid="uid://cxeo3u2651leu" path="res://Assets/LVL1-Prototype-BG.png" id="12_vi42w"]
+[ext_resource type="Script" path="res://Scripts/Combat.gd" id="13_2blcs"]
+[ext_resource type="PackedScene" uid="uid://dn71el8a0qkj2" path="res://Assets/Esmeralda/Esmerelda.tscn" id="14_nms3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(65, 161)
@@ -86,6 +88,39 @@ script = ExtResource("4_ju80x")
 
 [node name="GUI" parent="." instance=ExtResource("9_mu3kn")]
 
+[node name="CombatContoller" type="Node" parent="."]
+script = ExtResource("13_2blcs")
+
+[node name="SlowdownTimer" type="Timer" parent="CombatContoller"]
+
+[node name="Cooldown" type="Timer" parent="CombatContoller"]
+
+[node name="MultiplierTimer" type="Timer" parent="CombatContoller"]
+
+[node name="Esmerelda" parent="CombatContoller" instance=ExtResource("14_nms3o")]
+position = Vector2(163, 565)
+scale = Vector2(0.4, 0.4)
+ability = "ability_1_cost"
+color = Color(0.972549, 0.0235294, 0.247059, 1)
+
+[node name="Esmerelda2" parent="CombatContoller" instance=ExtResource("14_nms3o")]
+position = Vector2(438, 565)
+scale = Vector2(0.4, 0.4)
+ability = "ability_2_cost"
+color = Color(0, 0.870588, 0, 1)
+
+[node name="Esmerelda3" parent="CombatContoller" instance=ExtResource("14_nms3o")]
+position = Vector2(728, 558)
+scale = Vector2(0.4, 0.4)
+ability = "ability_3_cost"
+color = Color(1, 1, 1, 1)
+
+[node name="Esmerelda4" parent="CombatContoller" instance=ExtResource("14_nms3o")]
+position = Vector2(1004, 552)
+scale = Vector2(0.4, 0.4)
+ability = "ability_4_cost"
+color = Color(0.462745, 0.839216, 0.992157, 1)
+
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D/Area2D2" method="_on_body_entered"]
@@ -95,3 +130,6 @@ script = ExtResource("4_ju80x")
 [connection signal="body_entered" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D4" to="CharacterBody2D/Area2D4" method="_on_body_exited"]
 [connection signal="NoteSpawner" from="CharacterBody2D/Node2" to="CharacterBody2D" method="_on_node_2_note_spawner"]
+[connection signal="timeout" from="CombatContoller/SlowdownTimer" to="CombatContoller" method="_on_slowdown_timer_timeout"]
+[connection signal="timeout" from="CombatContoller/Cooldown" to="CombatContoller" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="CombatContoller/MultiplierTimer" to="CombatContoller" method="_on_multiplier_timer_timeout"]

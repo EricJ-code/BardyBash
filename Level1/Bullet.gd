@@ -12,5 +12,9 @@ func _process(delta):
 	#var collision_info = move_and_collide(vel.normalized() * delta * speed)
 	#move_and_collide(speed * delta)
 
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	Score.takeDamage(1)
+	queue_free()
+
 
 
