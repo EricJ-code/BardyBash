@@ -1,20 +1,28 @@
 [gd_scene load_steps=2 format=2]
 
+# External resource linking to the GUT (Godot Unit Testing) plugin script
 [ext_resource path="res://addons/gut/plugin_control.gd" type="Script" id=1]
 
+# Control node representing the GUT plugin in the scene
 [node name="Gut" type="Control"]
 margin_right = 740.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 740, 250 )
 script = ExtResource( 1 )
+
+# Meta information for the GUT plugin
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+# Styling properties for the GUT plugin UI
 _font_name = "AnonymousPro"
 _font_size = 20
 _font_color = Color( 0.8, 0.8, 0.8, 1 )
 _background_color = Color( 0.15, 0.15, 0.15, 1 )
 _color_output = true
+
+# Configuration options for GUT
 _select_script = ""
 _tests_like = ""
 _inner_class_name = ""
@@ -38,6 +46,10 @@ _directory3 = ""
 _directory4 = ""
 _directory5 = ""
 _directory6 = ""
+
+# Test execution strategy for handling double precision values
 _double_strategy = 1
+
+# Pre-run and post-run scripts
 _pre_run_script = ""
 _post_run_script = ""

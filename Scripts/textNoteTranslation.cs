@@ -1,3 +1,4 @@
+// Importing necessary modules
 using Godot;
 using System;
 using Melanchall.DryWetMidi.Multimedia;
@@ -9,15 +10,16 @@ using System.Linq;
 using System.Threading;
 
 
-
+// Definition of the partial class "textNoteTranslation" which extends Node2D
 public partial class textNoteTranslation : Godot.Node2D
 {
-
+	// Declaration of MidiFile variable
 	MidiFile midiFile;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		// Reading the MIDI file
 		midiFile = MidiFile.Read("Music/DummySong.mid");
 		/*
 		Eric Estadt
@@ -37,8 +39,11 @@ public partial class textNoteTranslation : Godot.Node2D
 			playback.Start();
 		}
 		*/
+
+		// List to store note events
 		List<string> noteEvents = new List<string>();
 		
+		// Loop through track chunks and timed events to collect note events
 		foreach (var x in midiFile.GetTrackChunks()) {
 			GD.Print(x);
 			foreach (var y in x.GetTimedEvents()){
@@ -47,11 +52,15 @@ public partial class textNoteTranslation : Godot.Node2D
 				}
 			}
 		}
+
+		// Writing note events to a text file
 		using (StreamWriter outputFile = new StreamWriter(Path.Combine("Music/BeatMaps", "WriteLines.txt"))){
 			foreach (string line in noteEvents)
 				outputFile.WriteLine(line);
 			outputFile.Close();
 		}
+
+		
 		/*
 		Eric Estadt
 		10.2.2023

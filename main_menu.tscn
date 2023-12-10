@@ -1,5 +1,7 @@
+# Scene information with load steps, format version, and UID
 [gd_scene load_steps=2 format=3 uid="uid://cxpqavc30oxt8"]
 
+# Sub-resource for GDScript
 [sub_resource type="GDScript" id="GDScript_drc8i"]
 script/source = "extends Control
 
@@ -31,6 +33,7 @@ func _on_quit_pressed():
 	get_tree().quit()
 "
 
+# Root node: MainMenu Control
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -40,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_drc8i")
 
+# Child node: ColorRect node for background
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -49,6 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.196078, 0, 0.317647, 1)
 
+# Child node: MarginContainer for layout
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -59,9 +64,11 @@ grow_vertical = 2
 theme_override_constants/margin_top = 30
 metadata/_edit_group_ = true
 
+# Child node: VBoxContainer for vertical layout
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+#Child node: Label for game title
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -71,43 +78,51 @@ text = "Bardy
 Bash"
 horizontal_alignment = 1
 
+#Child node: VBoxContainer2 for more vertical layout
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
+# Child node: MarginContainer for Play button
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 500
 
+# Child node: Play button
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 text = "Play"
 
+#Child node: MarginContainer2 for Options button
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_right = 500
 
+# Child node: Options button
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 action_mode = 0
 text = "Options"
 
+# Child node: MarginContainer3 for Quit button
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_right = 500
 
+# Child node: Quit button
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 text = "Quit"
 
+# Connections for button presses
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3/Quit" to="." method="_on_quit_pressed"]

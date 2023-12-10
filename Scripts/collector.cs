@@ -3,28 +3,36 @@ using System;
 
 public partial class collector : Node2D
 {
+    // Exported variable for setting the action
 	[Export]
 	private string action ="";
+    // Counter variable
 	private int counter = 0;
 	
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+
 	}
 
+    // Method to spawn a note using the Spawner node
 	public void spawnNote() {
 		GetNode<Spawner>("Spawner").spawn();
 	}
 
+    // Method to handle the collection action
 	public void collect() {
 		// Use the input against the action variable.
 	}
+
+    // Signal handler for the "area_entered" signal of the Area2D node
 	public void _on_area_2d_area_entered(Area2D area) {
 		//
 		
@@ -35,10 +43,13 @@ public partial class collector : Node2D
 		// Replace with function body.
 	}
 
+    // Signal handler for the "body_entered" signal of the Area2D node
 	public void _on_area_2d_body_entered(Node body) {
+	// Access the Score node from the root
 	var score = GetNode<Score>("/root/Score");
 		//GetNode<Score>("/root/Score").add_combo();
 
+        // Increase combo and gauge in the Score node
 		//GD.Print(GetNode<Score>("/root/Score").gauge);
 		score.addCombo();
 		score.addGauge(1);

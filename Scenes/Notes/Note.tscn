@@ -1,11 +1,18 @@
+# Godot scene definition with load steps and unique ID
 [gd_scene load_steps=3 format=3 uid="uid://dg1kecjes0a7x"]
 
+# External resources for the scene
 [ext_resource type="Texture2D" uid="uid://2mtqb8xbgw0y" path="res://Assets/Test Images/Red 1.png" id="1_jt6hy"]
 [ext_resource type="Script" path="res://Scenes/Notes/Note.cs" id="1_wg1vr"]
 
+# Node definition for a 2D node
 [node name="Node2D" type="Node2D"]
+# Linking the script resource to the node
 script = ExtResource("1_wg1vr")
 
+# Sprite node definition with a 2D sprite
 [node name="Sprite2D" type="Sprite2D" parent="."]
+# Setting the scale of the sprite
 scale = Vector2(0.25, 0.25)
+# Assigning the texture from the external resource
 texture = ExtResource("1_jt6hy")

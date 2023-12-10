@@ -1,9 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dn1htfi3gghi1"]
 
+# External resources linking to scripts and textures
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qg6xg"]
 [ext_resource type="Texture2D" uid="uid://c1s3x3rxmgeov" path="res://Assets/BB_alpha_BG.png" id="2_84o4k"]
 [ext_resource type="Texture2D" uid="uid://bbfo6qf0bauoi" path="res://Assets/BardyBash-Logo.png" id="3_gl3m0"]
 
+# Node definition for MainMenu2, a Control node
 [node name="MainMenu2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -13,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qg6xg")
 
+# Child node: TextureRect displaying BB_alpha_BG.png
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
@@ -20,6 +23,7 @@ offset_bottom = 643.0
 texture = ExtResource("2_84o4k")
 expand_mode = 1
 
+# Child node: MarginContainer for layout adjustments
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -29,9 +33,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 30
 
+# Child node: VBoxContainer for vertical layout
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+# Child node: TextureRect displaying BardyBash-Logo.png
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -40,27 +46,32 @@ texture = ExtResource("3_gl3m0")
 expand_mode = 3
 stretch_mode = 4
 
+# Child node: VBoxContainer2 for additional vertical layout
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
+# Child node: MarginContainer for layout adjustments
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 500
 
+# Child node: Button for Play
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 text = "Play"
 
+# Child node: MarginContainer2 for layout adjustments
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_right = 500
 
+# Child node: Button for Options
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
@@ -68,22 +79,26 @@ action_mode = 0
 keep_pressed_outside = true
 text = "Options"
 
+# Child node: MarginContainer3 for layout adjustments
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_right = 500
 
+# Child node: Button for Quit
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
 text = "Quit"
 
+# Child node: PopupMenu for additional UI elements
 [node name="PopupMenu" type="PopupMenu" parent="."]
 initial_position = 1
 size = Vector2i(500, 500)
 hide_on_item_selection = false
 hide_on_checkable_item_selection = false
 
+# Child node: ColorRect for background color
 [node name="ColorRect" type="ColorRect" parent="PopupMenu"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,6 +107,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.631373, 0.988235, 1)
 
+# Child node: MarginContainer for layout adjustments
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,11 +121,14 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+# Child node: HSlider for horizontal sliding control
 [node name="HSlider" type="HSlider" parent="PopupMenu/MarginContainer"]
 layout_mode = 2
 
+# Child node: AudioStreamPlayer for playing audio
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+# Connections between signals and methods
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer2/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer3/Quit" to="." method="_on_quit_pressed"]

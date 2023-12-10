@@ -12,25 +12,39 @@ using System.Linq;
 
 public partial class SongManager : Node
 {
+    // Singleton instance of the SongManager
 	public static SongManager Instance;
+    // AudioStreamPlayer for playing music
 	AudioStreamPlayer audioStreamPlayer;
+    // Delay settings
 	public float songDelayInSeconds;
 	public int inputDelayInMilliseconds;
+
+    // Location of the MIDI file
 	public string fileLocation;
+
+    // Note settings
 	public float noteTime;
 	public float noteSpawnY;
 	public float noteTapY;
+
+    // List of timestamps from the MIDI file
 	public List<double> timestamps;
-
+    // Dictionary to map timestamps to note counts
 	public Dictionary<double, int> timestampToNote = new Dictionary<double, int>();
+    // Bullet script
 	GDScript blScript;
-
+    // Signal for note spawning
 	[Signal]
 	public delegate void NoteSpawnerEventHandler();
 
+    // Spawn index for tracking notes
 	int spawnIndex = 0;
 
+    // Note restriction settings
 	public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
+
+    // Property for calculating note despawn Y position
 	public float noteDepsawnY
 	{
 		get
@@ -39,6 +53,7 @@ public partial class SongManager : Node
 		}
 	}
 
+    // Static MIDI file instance
 	public static MidiFile midifile;
 
 	// Called when the node enters the scene tree for the first time.
@@ -53,7 +68,9 @@ public partial class SongManager : Node
 	}	
 
 
+    // List to store bullet objects
 	List<GodotObject> Bullets = new List<GodotObject>(); // list of all bullets to spawn in song
+    // Counter for note spawning
 	int counter = 1;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -69,7 +86,7 @@ public partial class SongManager : Node
 				// if (counter == 4) 
 				// 	counter = 1;
 				// else if (counter == 1 || counter == 3) 
-				int difficulty = 4; // higher = easier
+				int difficulty = 4; // Higher value makes it easier
 				if (timestampToNote[timestamps[spawnIndex] - Instance.noteTime] > 0) {
 					if(spawnIndex % difficulty == 0 ){
 						EmitSignal(SignalName.NoteSpawner, timestampToNote[timestamps[spawnIndex] - Instance.noteTime]);
@@ -87,12 +104,14 @@ public partial class SongManager : Node
 		}
 	}
 
+    // Read MIDI data from file
 	public void ReadFromFile()
 	{
 		midifile = MidiFile.Read("Music/Oscar-Sketch-2.mid");
 		GetDataFromMidi();
 	}
 
+    // Extract data from MIDI file
 	public void GetDataFromMidi() {
 		var notes = midifile.GetNotes();
 		var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
@@ -111,12 +130,13 @@ public partial class SongManager : Node
 		StartSong();
 	}
 
+    // Start playing the song
 	public void StartSong() {
 		Instance.audioStreamPlayer.Play();
 	}
 
 
-	
+    // Get current audio source time	
 	public static double GetAudioSourceTime() {
 		
 		return Instance.audioStreamPlayer.GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix() - AudioServer.GetOutputLatency();
@@ -126,7 +146,7 @@ public partial class SongManager : Node
 	}
 
 
-	
+    // Set timestamps based on MIDI notes
 	public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array) {
 		foreach (var note in array)
 		{

@@ -1,10 +1,13 @@
 extends Node
 
+# Exported variables for boss health and ability costs
 @export var boss_health = 100
 @export var ability_1_cost = 10
 @export var ability_2_cost = 20
 @export var ability_3_cost = 30
 @export var ability_4_cost = 30
+
+# Cooldown and damage multiplier variables
 var on_cooldown = false
 var dmg_multiplier = 1
 
@@ -33,11 +36,13 @@ func _process(delta):
 		ability4()
 		print($Cooldown.get_time_left())
 
+# Signal handler for cooldown timeout
 func _on_cooldown_timeout():
 	$Cooldown.stop()
 	on_cooldown = false
 	print("------------Ended")
 
+# Ability 1: Healing ability
 func ability1():
 	if Score.getGauge() >= ability_1_cost:
 		Score.spendGauge(ability_1_cost)
@@ -47,6 +52,7 @@ func ability1():
 		on_cooldown = true
 		$Cooldown.start()
 		
+# Ability 2: Multiplier ability
 func ability2():
 	if Score.getGauge() >= ability_2_cost:
 		Score.spendGauge(ability_2_cost)
@@ -58,6 +64,7 @@ func ability2():
 		$Cooldown.start()
 		$MultiplierTimer.start(10)
 
+# Ability 3: Damage multiplier and slowdown ability
 func ability3():
 	if Score.getGauge() >= ability_3_cost:
 		Score.spendGauge(ability_3_cost)
@@ -69,6 +76,8 @@ func ability3():
 		if $SlowdownTimer.is_stopped():
 			$SlowdownTimer.start($SlowdownTimer.get_wait_time())
 		$Cooldown.start()
+
+# Ability 4: Single-use damage ability
 func ability4():
 	if Score.getGauge() >= ability_4_cost:
 		Score.spendGauge(ability_4_cost)
@@ -78,6 +87,7 @@ func ability4():
 		$Cooldown.start()
 		Score.damageBoss(dmg_multiplier * 1)
 
+# Signal handler for slowdown timer timeout
 func _on_slowdown_timer_timeout():
 	reset_dmg_mult()
 	$Esmerelda3.choose_anim()
@@ -85,6 +95,7 @@ func _on_slowdown_timer_timeout():
 	$SlowdownTimer.stop()
 	pass # Replace with function body.
 
+# Signal handler for multiplier timer timeout
 func _on_multiplier_timer_timeout():
 	$Esmerelda2.choose_anim()
 	Score.resetMultiplier()
@@ -92,8 +103,10 @@ func _on_multiplier_timer_timeout():
 	#
 	pass # Replace with function body.
 
+# Helper method to double damage multiplier
 func double_dmg_mult():
 	dmg_multiplier = 2
 
+# Helper method to reset damage multiplier
 func reset_dmg_mult():
 	dmg_multiplier = 1

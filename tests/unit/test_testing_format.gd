@@ -4,8 +4,10 @@ Eric J. Estadt
 '''
 extends "res://addons/gut/test.gd"
 '''
+
 var Shooter = preload("res://Level1/Shooter.gd")
 
+# Test for shooter input
 func test_shooter_input(): 
 	var shooter = Shooter.new()
 	var bulletPath = preload("res://Level1/Bullet.tscn")
@@ -14,8 +16,11 @@ func test_shooter_input():
 	
 	assert_eq(result, true)
 '''
+
 var Options = preload("res://Scripts/Options2.gd")
 var MainMenu = preload("res://Scripts/main_menu.gd")
+
+# Test for Options class
 func test_Options(): 
 	var options = Options.new() 
 	var result = options._on_master_slider_value_changed(1)
@@ -25,6 +30,7 @@ func test_Options():
 	result = options._on_sfx_slider_value_changed(1)
 	assert_eq(result, true) 
 	
+# Test for MainMenu class
 func test_MainMenu():
 	var mainmenu = MainMenu.new()
 	var result = mainmenu._on_options_pressed()
@@ -32,17 +38,20 @@ func test_MainMenu():
 	result = mainmenu._on_play_pressed()
 	assert_eq(result, true) 
 '''
+
+# Sample passing test function
 func test_pass():
 	var x = 0
 	x *= 100
 	assert_eq(x, 0)
 	
+# Sample failing test function
 func test_fail():
 	var x = 0
 	x *= 100
 	assert_eq(x, 100)
 	
-#Error messages
+# Error messages for test functions
 #vvvvvvvvvvvvvv
 func test_pass_with_msg():
 	var x = 0

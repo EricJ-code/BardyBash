@@ -1,5 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dibup2qiiuwwp"]
 
+# External resources linking to scripts and scenes
 [ext_resource type="Script" path="res://Scripts/Stage1Base.gd" id="1_2ff4s"]
 [ext_resource type="PackedScene" uid="uid://b3mxlw6sebksl" path="res://Tscns/collector.tscn" id="2_rgbg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.cs" id="3_2n04e"]
@@ -8,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dg1kecjes0a7x" path="res://Tscns/Note.tscn" id="5_v5s8o"]
 [ext_resource type="Script" path="res://UserInput.cs" id="6_sd4n8"]
 
+# Root node: Node2D
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2ff4s")
 
+# Child node: Label
 [node name="Label" type="Label" parent="."]
 offset_left = 104.0
 offset_top = 80.0
@@ -18,6 +21,7 @@ offset_right = 144.0
 offset_bottom = 103.0
 scale = Vector2(4.4814, 2.73108)
 
+# Instances of Collector nodes with Spawner and Note children
 [node name="Collector1" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(224, 480)
 
@@ -28,6 +32,7 @@ script = ExtResource("3_2n04e")
 
 [node name="Note" parent="Collector1/Spawner" instance=ExtResource("5_v5s8o")]
 
+# Instances of Collector2 nodes with Spawner and Note children
 [node name="Collector2" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(448, 544)
 script = ExtResource("3_uqepu")
@@ -38,6 +43,7 @@ script = ExtResource("3_2n04e")
 
 [node name="Note" parent="Collector2/Spawner" instance=ExtResource("5_v5s8o")]
 
+# Instances of Collector3 nodes with Spawner and Note children
 [node name="Collector3" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(696, 544)
 script = ExtResource("3_uqepu")
@@ -48,6 +54,7 @@ script = ExtResource("3_2n04e")
 
 [node name="Note" parent="Collector3/Spawner" instance=ExtResource("5_v5s8o")]
 
+# Instances of Collector4 nodes with Spawner and Note children
 [node name="Collector4" parent="." instance=ExtResource("2_rgbg6")]
 position = Vector2(928, 480)
 script = ExtResource("3_uqepu")
@@ -56,8 +63,10 @@ script = ExtResource("3_uqepu")
 position = Vector2(-376, -410)
 script = ExtResource("3_2n04e")
 
+# GUI instance
 [node name="GUI" parent="." instance=ExtResource("5_krlrl")]
 [node name="Note" parent="Collector4/Spawner" instance=ExtResource("5_v5s8o")]
 
+# UserInput node
 [node name="UserInput" type="Node2D" parent="."]
 script = ExtResource("6_sd4n8")

@@ -13,6 +13,8 @@ public partial class Test : Node
 	public override void _Process(double delta)
 	{
 	}
+
+    // Custom method to print a number
 	public void printNumber()
 	{
 		GD.Print("10000");

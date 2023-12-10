@@ -1,8 +1,11 @@
+# This is a GDScript scene file with load steps and specified format and UID
 [gd_scene load_steps=3 format=3 uid="uid://pxvb5s21bwy4"]
 
+# External resources (scripts and packed scenes) used in the scene
 [ext_resource type="Script" path="res://GameManagement/Game_Manager.gd" id="1_cijth"]
 [ext_resource type="PackedScene" uid="uid://vs1ca8fvt3mg" path="res://GameManagement/ui_layer.tscn" id="1_jhh2t"]
 
+# Main nodes in the scene
 [node name="Game_Manager" type="Node2D"]
 script = ExtResource("1_cijth")
 
@@ -10,5 +13,6 @@ script = ExtResource("1_cijth")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+# Connections between signals and methods
 [connection signal="load_level" from="UI_Layer" to="." method="_on_ui_layer_load_level"]
 [connection signal="unload_level" from="UI_Layer" to="." method="_on_ui_layer_unload_level"]

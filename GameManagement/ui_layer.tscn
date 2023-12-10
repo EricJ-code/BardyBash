@@ -1,18 +1,24 @@
+# Load steps and format information
 [gd_scene load_steps=4 format=3 uid="uid://vs1ca8fvt3mg"]
 
+#External resources
 [ext_resource type="Script" path="res://GameManagement/ui_layer.gd" id="1_0arpl"]
 [ext_resource type="PackedScene" uid="uid://c4vqsbkf50oi" path="res://Tscns/Options_Scene.tscn" id="2_suxob"]
 [ext_resource type="PackedScene" uid="uid://dn1htfi3gghi1" path="res://Tscns/main_menu.tscn" id="3_85sge"]
 
+# UI_Layer node definition
 [node name="UI_Layer" type="CanvasLayer"]
 script = ExtResource("1_0arpl")
 
+# Main Menu node instantiation
 [node name="MainMenu" parent="." instance=ExtResource("3_85sge")]
 unique_name_in_owner = true
 metadata/_edit_use_anchors_ = true
 
+# Options node instantiation
 [node name="Options" parent="." instance=ExtResource("2_suxob")]
 
+# Control node definition
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -20,6 +26,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
+# Signal connections
 [connection signal="Options_show" from="MainMenu" to="." method="_on_main_menu_options_show"]
 [connection signal="link_start" from="MainMenu" to="." method="_on_main_menu_link_start"]
 [connection signal="MainMenu" from="Options" to="." method="_on_options_main_menu"]

@@ -1,6 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3c2ca4h4ns56"]
 
+# External resource linking to the C# script
 [ext_resource type="Script" path="res://Scripts/textNoteTranslation.cs" id="1_kw8q3"]
 
+# Node definition for a Node2D in the scene
 [node name="Node2D" type="Node2D"]
+
+# Linking the C# script to the Node2D
 script = ExtResource("1_kw8q3")

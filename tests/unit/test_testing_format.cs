@@ -12,6 +12,7 @@ using GdMUT;
 public class TestClass
 {
 	#if TOOLS
+	// Test function demonstrating a passing test case
 	[CSTestFunction]
 	public static Result ExamplePass()
 	{
@@ -38,6 +39,8 @@ public class TestClass
 			: new Result(false, "You can't multiply 0 and expect anything else than 0!");
 	}
 	*/
+
+	// Test function demonstrating a custom success message
 	[CSTestFunction]
 	public static Result ExampleCustomSuccess()
 	{

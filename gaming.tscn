@@ -1,6 +1,11 @@
+# Scene information with load steps, format version, and UID
 [gd_scene load_steps=2 format=3 uid="uid://b1bjrg2465k7j"]
 
+# External script resource
 [ext_resource type="Script" path="res://Scripts/textNoteTranslation.cs" id="1_kw8q3"]
 
+# Root node: Node2D
 [node name="Node2D" type="Node2D"]
+
+# Attaching the script to the Node2D
 script = ExtResource("1_kw8q3")

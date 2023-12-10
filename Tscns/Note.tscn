@@ -1,22 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg1kecjes0a7x"]
 
+# External resources linking to a texture and a script
 [ext_resource type="Texture2D" uid="uid://2mtqb8xbgw0y" path="res://Assets/Test Images/Red 1.png" id="1_jt6hy"]
 [ext_resource type="Script" path="res://Scenes/Notes/Note.gd" id="1_md3is"]
 
+# Subresource definition for a RectangleShape2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02jv4"]
 
+# Node definition for Note, a Node2D
 [node name="Note" type="Node2D"]
 script = ExtResource("1_md3is")
 
+# Child node: Sprite2D for displaying the texture
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.041)
 texture = ExtResource("1_jt6hy")
 
+# Child node: VisibleOnScreenNotifier2D for screen visibility detection
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+# Child node: RigidBody2D for physics interactions
 [node name="RigidBody2D" type="CharacterBody2D" parent="."]
 
+# Child node: CollisionShape2D for defining the collision shape
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_02jv4")
 
+# Connection between signal and method
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,5 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cmt7jnks6ll32"]
 
+# External resources including scripts, scenes, textures, and audio
 [ext_resource type="Script" path="res://Level1/Shooter.gd" id="1_hou8j"]
 [ext_resource type="PackedScene" uid="uid://m74y5r6vqgof" path="res://Level1/collectdemo.tscn" id="2_3f5tr"]
 [ext_resource type="Texture2D" uid="uid://bwalv0f0pxsdl" path="res://Assets/Oscar/LVL1-Prototype-Oscar.png" id="3_owy4t"]
@@ -15,12 +16,15 @@
 [ext_resource type="Script" path="res://Scripts/Combat.gd" id="13_2blcs"]
 [ext_resource type="PackedScene" uid="uid://dn71el8a0qkj2" path="res://Assets/Esmeralda/Esmerelda.tscn" id="14_nms3o"]
 
+# Subresource defining a rectangle shape used for collision shapes
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5sl"]
 size = Vector2(65, 161)
 
+# Root Node2D of the scene
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, 1)
 
+# Background image
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -5.0
 offset_right = 1915.0
@@ -29,6 +33,7 @@ scale = Vector2(0.601768, 0.599125)
 texture = ExtResource("12_vi42w")
 expand_mode = 1
 
+# Player character with a body, collision shape, markers, and sprite
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(595, 233)
 script = ExtResource("1_hou8j")
@@ -65,6 +70,7 @@ texture = ExtResource("3_owy4t")
 position = Vector2(-432, 332)
 script = ExtResource("4_twq11")
 
+# Areas for collecting objects with associated scripts
 [node name="Area2D2" parent="CharacterBody2D" instance=ExtResource("2_3f5tr")]
 position = Vector2(-157, 331)
 script = ExtResource("5_vvnq2")
@@ -77,6 +83,7 @@ script = ExtResource("6_q0m67")
 position = Vector2(407, 318)
 script = ExtResource("7_0tghb")
 
+# Additional nodes for audio, GUI, and combat elements
 [node name="Node2" type="Node" parent="CharacterBody2D"]
 script = ExtResource("9_m7lqg")
 
@@ -121,6 +128,7 @@ scale = Vector2(0.4, 0.4)
 ability = "ability_4_cost"
 color = Color(0.462745, 0.839216, 0.992157, 1)
 
+# Connections for signals between nodes
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D/Area2D2" method="_on_body_entered"]

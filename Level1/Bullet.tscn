@@ -1,23 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjbjdf3hjfhig"]
 
+# External resources
 [ext_resource type="Script" path="res://Level1/Bullet.gd" id="1_af7rm"]
 [ext_resource type="Texture2D" uid="uid://cf5h4hlwiryv0" path="res://Assets/Note1.png" id="2_2cpnq"]
 
+# Sub-resource definition for the collision shape
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0ggg"]
 size = Vector2(24, 17)
 
+# Bullet node definition
 [node name="Bullet" type="CharacterBody2D"]
 position = Vector2(-5, -6)
 script = ExtResource("1_af7rm")
 
+# VisibleOnScreenNotifier2D node definition
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(2, -1.5)
 
+# Sprite2D node definition
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2cpnq")
 
+# CollisionShape2D node definition
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -1.5)
 shape = SubResource("RectangleShape2D_r0ggg")
 
+# Connection definition for handling screen exit signal
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

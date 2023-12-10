@@ -1,4 +1,6 @@
+# Scene information with format version and UID
 [gd_scene format=3 uid="uid://uxkvee0w2y7e"]
 
+# Root node: Node2D
 [node name="Node2D3" type="Node2D"]
 position = Vector2(-1, -1)
